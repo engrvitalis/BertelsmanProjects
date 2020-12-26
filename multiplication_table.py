@@ -19,5 +19,5 @@ for i in range(1, 11):
     print(' ', end=" ")
     print(i, end=" ")
 
-    # Populate the body with rows X columns.
+    # Populate the body with rows x columns.
     print(*(f"{i*j:3}" for j in range(1, 11)))
