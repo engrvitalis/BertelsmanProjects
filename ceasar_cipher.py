@@ -6,17 +6,16 @@ Input: String
 Output: String
 """
 
-message = 'Nnamdi Vitalis Ewuzie'
-shift = 3
+message = input("Enter message: ")
+shift = int(input("Enter cipher key: "))
 
-for i in message:
-    if i.isalpha():
-        val = ord(i.lower())
-        
-        # Encoding
-        if val+shift <= ord('z'):
-            letter = chr(val + shift)
+for letter in message: 
+    if not letter.isalpha():
+        char = letter
     else:
-        letter = i
-
-    print(letter, end="")
+        if letter.isupper():
+            char = chr((ord(letter) + shift - ord('A')) % 26 + ord('A'))
+        else:
+            char = chr((ord(letter) + shift - ord('a')) % 26 + ord('a'))
+          
+    print(char, end="")
