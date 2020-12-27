@@ -1,5 +1,5 @@
 """
-This program takes three number inputs from the user 
+This function takes three number inputs from the user 
 and returns the median number.
 
 Input: Integer
