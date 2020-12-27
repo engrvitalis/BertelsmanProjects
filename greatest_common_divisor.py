@@ -8,7 +8,7 @@ Output: String
 m = int(input("Enter the first integer: "))
 n = int(input("Enter the second integer: "))
 
-d = min(m, n)
+d = abs(min(m, n))
 while True:
     if m % d == 0 and n % d == 0:
         print(f"The greatest common divisor of {m} and {n} is {d}")
