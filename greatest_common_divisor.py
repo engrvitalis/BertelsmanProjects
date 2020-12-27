@@ -15,6 +15,3 @@ while True:
         break
     else:
         d -= 1
-        if d == 0:
-            print(f"{m} and {n} does not have a common divisor")
-            break
