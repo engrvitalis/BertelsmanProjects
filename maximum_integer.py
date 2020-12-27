@@ -9,9 +9,12 @@ Output: String of values
 
 import random
 
+# Initialize state variables.
 update_count = 0
 largest = None
 
+# Generate series of integers update the maximum value while keeping 
+# count on the number of updates.
 for i in range(100):
     num = random.randint(1, 100)
     if largest is None:
@@ -24,6 +27,7 @@ for i in range(100):
     else:
         display = f'{num}'
     
+    # Display all relevant information
     print(display)
 
 print(f'\nMaximum value found was {largest}')
