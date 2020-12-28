@@ -1,5 +1,5 @@
 """
-This program reads in a string of characters and determines whether
+This function reads in a string of characters and determines whether
 it contains valid integer.
 
 Input: String
@@ -7,8 +7,11 @@ Output: String
 """
 
 def is_integer(string):
+    # Make sure value is provided.
     if len(string) != 0:
+        # Remove white spaces before processing.
         string = string.strip()
+        # Accomodate signed integers.
         if string[0] in ['+', '-']:
             if string[1:].isdigit():
                 display = f'{string.strip()} is an integer'
@@ -26,6 +29,8 @@ def is_integer(string):
 
 
 if __name__ == '__main__':
+    # Request for user input.
     string = input("Enter a value: ")
 
+# Display relevant information.
 print(is_integer(string))
