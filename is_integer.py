@@ -7,11 +7,25 @@ Output: String
 """
 
 def is_integer(string):
-    return len(string) != 0 and string.strip().isdigit()
+    if len(string) != 0:
+        string = string.strip()
+        if string[0] in ['+', '-']:
+            if string[1:].isdigit():
+                display = f'{string.strip()} is an integer'
+            else:
+                display = f'{string.strip()} is not an integer'
+        else:
+            if string.isdigit():
+                display = f'{string.strip()} is an integer'
+            else:
+                display = f'{string.strip()} is not an integer'
+    else:
+        display = f'Invalid input!'
 
+    return display
 
 
 if __name__ == '__main__':
-    string = '345'
+    string = input("Enter a value: ")
 
 print(is_integer(string))
