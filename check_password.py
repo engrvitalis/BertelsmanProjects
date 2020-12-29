@@ -6,7 +6,7 @@ This program check if a password is good by using the following criteria:
 - It must contain at least one number.
 
 Input: String
-Output: String
+Output: Boolean
 """
 
 def check_password(password):
@@ -26,4 +26,12 @@ def check_password(password):
     
     return (len(password) >= 8 and uppercase and lowercase and digit)
 
-    
+
+def main():
+    if check_password:
+        print("The password is good!")
+    else:
+        print("The password is bad!")
+
+if __name__ == '__main__':
+    main()
