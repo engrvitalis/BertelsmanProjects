@@ -28,7 +28,9 @@ def check_password(password):
 
 
 def main():
-    if check_password:
+    password = input("Enter passsword: ")
+
+    if check_password(password):
         print("The password is good!")
     else:
         print("The password is bad!")
