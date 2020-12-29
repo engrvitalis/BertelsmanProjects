@@ -20,5 +20,8 @@ def password_generator():
 
     return password
 
+def main():
+    # Display password.
+    print(password_generator())
 
-print(password_generator())
+
