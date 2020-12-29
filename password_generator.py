@@ -1,9 +1,9 @@
 """
-This function will generate random passwords of length between 
+This program will generate random passwords of length between 
 7 and 10. They will be generated from ASCII positions 33 through 126.
 
 Input: None
-Output: Boolean
+Output: string
 """
 
 def password_generator():
@@ -20,8 +20,10 @@ def password_generator():
 
     return password
 
+# Display password.
 def main():
-    # Display password.
     print(password_generator())
 
-
+# Call main function.
+if __name__ == "__main__":
+    main()
