@@ -1,17 +1,11 @@
 '''
 This project allows the user to convert from one base to another.
 It supports bases 2 through 16.
-
-Input: Integer
-Output: String
 '''
 
 def decimal_to_others(num, new_base):
     """
     This function converts numbers from decimal to bases 2 through 16.
-
-    Input: Integer
-    Output: String
     """
 
     # Request for user input and initialize state variable.
@@ -31,11 +25,15 @@ def decimal_to_others(num, new_base):
 
 
 def others_to_decimal(num, num_base):
+    """
+    This function converts numbers from base 2 through 16 to base 10.
+    """
+
     result = 0
     power = len(num) - 1
 
     for i in num:
-        if ord('A') <= ord(i) <= ord('Z'):
+        if ord('A') <= ord(i) <= ord('Z'): # Check for remainders greater than 9
             result += (ord(i) - 55) * int(num_base)**(power)
         else:
             result += int(i) * int(num_base)**(power)
@@ -50,6 +48,7 @@ def main():
 
     num = input("Enter number: ")
     base = input("Enter base: ")
+
     if 2 <= int(base) <= 16:
         if conv_type == 1:
             print(f'{num} to base 10 = {decimal_to_others(num, base)} to base {base}.')
