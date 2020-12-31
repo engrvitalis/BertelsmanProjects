@@ -32,13 +32,33 @@ def decimal_to_others(num, new_base):
         return -1
 
 def others_to_decimal(num, num_base):
-    pass
+    result = 0
+    power = len(num) - 1
+
+    for i in num:
+        if ord('A') <= ord(i) <= ord('Z'):
+            result += (ord(i) - 55) * num_base**(power)
+        else:
+            result += int(i) * num_base**(power)
+        power -= 1
+
+    return result
 
 def main():
-    num = int(input("Enter number: "))
-    base = int(input("Enter number base: "))
+    print('Please enter the type of conversion to perform: ')
+    print('- Enter 1 for "Decimal to other bases conversion"\n- Enter 2 for "Other bases to Decimal conversion"')
+    conv_type = int(input('--> '))
+    if conv_type == 1:
+        num = int(input("Enter number: "))
+        base = int(input("Enter number base: "))
 
-    print(decimal_to_others(num, base))
+        print(f'{num} to base 10 = {decimal_to_others(num, base)} to base {base}.')
+
+    if conv_type == 2:
+        num = input("Enter number: ")
+        base = int(input("Enter number base: "))
+
+        print(f'{num} to base {base} = {others_to_decimal(num, base)} to base 10')
 
 if __name__ == '__main__':
     main()
