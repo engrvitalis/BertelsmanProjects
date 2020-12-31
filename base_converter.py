@@ -7,19 +7,29 @@ Output: String
 '''
 
 def decimal_to_others(num, new_base):
+    """
+    This function converts numbers from decimal to bases 2 through 16.
+
+    Input: Integer
+    Output: String
+    """
+
     # Request for user input and initialize state variable.
     result = ''
-    above_nine_rem = {10: 'A', 11: 'B', 12: 'C', 13: 'D', 14:'E', 15:'F'}
 
     # Do long division and accumulate the remainders.
-    while num > 0:
-        rem = num % new_base
-        if rem >= 10:
-            rem = above_nine_rem[rem] # Map to appropriate letter if remainder is less greater than 9.
-        num = num // new_base
-        result = str(rem) + result
+    if 2 <= new_base <= 16:
+        while num > 0:
+            rem = num % new_base
+            if rem >= 10:
+                rem = chr(55 + rem) # Map to appropriate letter if remainder is less greater than 9.
+            num = num // new_base
+            result = str(rem) + result
 
-    return result
+        return result
+    else:
+        print("Base must be between 2 and 16!")
+        return -1
 
 def others_to_decimal(num, num_base):
     pass
