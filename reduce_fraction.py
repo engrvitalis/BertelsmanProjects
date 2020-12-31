@@ -20,7 +20,9 @@ def main():
     x = int(input("Enter the numerator: "))
     y = int(input("Enter the denominator: "))
 
-    print(reduce_fraction(x, y))
+    print("\nReduced fraction:")
+    print(f'Numerator: {reduce_fraction(x, y)[0]}')
+    print(f'Denominator: {reduce_fraction(x, y)[1]}')
 
 if __name__ == '__main__':
     main()
