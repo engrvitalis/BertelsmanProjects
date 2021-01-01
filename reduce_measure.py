@@ -22,23 +22,29 @@ def tense(tup):
     a tuple of strings.
     """
     v = ('cup', 'tablespoon', 'teaspoon')
-    t = ()
+    ls = []
+    index = 0
     for i in tup:
         if i > 1:
-            t.append('')
+            ls.append(str(v[index]) + 's')
+        else:
+            ls.append(v[index])
+        index += 1
+    
+    return tuple(ls)
 
 def main():
     x = 59
     y = "teaspoon"
     m = reduce_measure(x, y)
+    t = tense(m)
 
-    if len(m) == 3:
-        print(f'{m[0]} cup(s), {m[1]} tablespoon(s), {m[2]} teaspoon(s)')
-    elif len(m) == 2:
-        print(f'{m[0]} cup(s), {m[1]} tablespoon(s)')
-    else:
-        print(f'{m[0]} cups(s)')
+    result = ""
+    for i in range(len(m)):
+        result += f', {m[i]} {t[i]}'
 
+    print(result[2:])
+ 
 if __name__ == '__main__':
     main()
     
