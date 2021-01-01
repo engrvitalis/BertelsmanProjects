@@ -35,6 +35,19 @@ def tense(tup):
     
     return tuple(ls)
 
+def display(tup1, tup2):
+    """
+    This function will display the output in the correct format.
+    """
+    
+    result = ''
+    for i in range(len(tup1)):
+            if tup1[i] == 0:
+                continue
+            result += f', {tup1[i]} {tup2[i]}'
+
+    return result[2:]
+
 def main():
     # Request users input.
     x = int(input("Enter number: "))
@@ -42,19 +55,18 @@ def main():
 
     # Check for invalid input.
     if y == 'tablespoon' or y == 'teaspoon':
+
+        # Reduce measure calculation.
         m = reduce_measure(x, y)
+
+        # Make sure the right singular or plural words are used for unit of measure names.
         t = tense(m)
-        result = ""
-
-        # Format output.
-        for i in range(len(m)):
-            if m[i] == 0:
-                continue
-            result += f', {m[i]} {t[i]}'
-
-        print(result[2:])
+        
+        # Format and display output.
+        print(display(m, t))
 
     else:
+        # Exit on bad entry.
         print("invalid Entry!")
  
 if __name__ == '__main__':
