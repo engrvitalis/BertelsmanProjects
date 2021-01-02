@@ -4,6 +4,10 @@ the values one line at a time.
 """
 
 def sort_num():
+    """
+    Collect numbers from user and sort them in ascending order.
+    """
+    
     try:
         # Request initial input from user.
         num = int(input("Enter a number: "))
@@ -21,21 +25,11 @@ def sort_num():
         print("Invalid Input!")
         return []
 
-def display(ls):
-    """
-    Loop through the list argument and print the content on separate lines.
-    """
-
-    for i in ls:
-        print(i)
-
 def main():
 
-    # Collect numbers from user and sort them in ascending order.
-    ls = sort_num()
-
     # Display the result
-    display(ls)
+    for i in sort_num():
+        print(i)
 
 if __name__ == '__main__':
     main()
