@@ -14,7 +14,7 @@ def sort_num():
         # Continuously ask for input and collect 0 is entered.
         while num != 0:
             ls.append(num)
-            num = int(input("Enter a number: "))
+            num = int(input("Enter a number or '0' to stop: "))
 
         return sorted(ls)
     except:
