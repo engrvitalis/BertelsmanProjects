@@ -1,8 +1,6 @@
 """
 This program accepts input(List) from user and display a new
 list with the two smallest and the two largest values removed.
-It is assumed that user will provide valid input which is list 
-of numbers.
 
 Input: List - len(List) >= 4
 Output: Modified list
