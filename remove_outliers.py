@@ -10,11 +10,8 @@ Output: Modified list
 
 
 def remove_outliers(ls):
-
-    # Create a new copy of the list.
-    new_ls = [int(i) for i in ls if i not in [',', ']', '[']]
-
-    # Sort the list in ascending order.
+    # Create a new list and sort in ascending order.
+    new_ls = ls[:]
     new_ls.sort()
 
     # Remove outliers as per specification.
@@ -29,7 +26,10 @@ def main():
     # Get input from the users.
     ls = input("Enter a list of values: ")
 
-    # Make sure the length of list is up to 4 elements.
+    # Package the input as a list.
+    ls = [int(i) for i in ls if i not in [',', ']', '[']]
+
+    # Make sure the length of list is up to 4 elements else terminate program.
     if len(ls) >= 4:
         # Process the input data and display the result.
         print(f'\nProcessed list: {remove_outliers(ls)}')
