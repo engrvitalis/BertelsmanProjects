@@ -2,8 +2,9 @@
 This program accepts input(List) from user and display a new
 list with the two smallest and the two largest values removed.
 
-Input: List - len(List) >= 4
-Output: Modified list
+Input: List or sequence of numbers - len(List) >= 4
+       eg.: [4,3,4,5,6] or 43456
+Output: List
 """
 
 
