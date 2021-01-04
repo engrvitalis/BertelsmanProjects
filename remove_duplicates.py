@@ -19,8 +19,9 @@ def remove_duplicates():
 
     return list_of_words
 
+
 def main():
-    # Display the output
+    # Display the output as per specification.
     words = remove_duplicates()
     print()
     for word in words:
