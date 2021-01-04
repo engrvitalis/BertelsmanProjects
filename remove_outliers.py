@@ -22,11 +22,14 @@ def remove_outliers(ls):
 
 
 def main():
+    ls = []
     # Get input from the users.
-    ls = input("Enter a list of values: ")
-
-    # Package the input as a list.
-    ls = [int(i) for i in ls if i not in [',', ']', '[']]
+    while True:
+        num = input("Enter a number or hit return to exit: ")
+        if num == '':
+            break
+        else:
+            ls.append(int(num))
 
     # Make sure the length of list is up to 4 elements else terminate program.
     if len(ls) >= 4:
