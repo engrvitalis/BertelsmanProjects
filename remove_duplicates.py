@@ -20,7 +20,11 @@ def remove_duplicates():
     return list_of_words
 
 def main():
-    print(f'{remove_duplicates()}')
+    # Display the output
+    words = remove_duplicates()
+    print()
+    for word in words:
+        print(word)
 
 
 if __name__ == '__main__':
