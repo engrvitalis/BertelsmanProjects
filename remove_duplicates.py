@@ -8,8 +8,11 @@ a blank line.
 @return: The list of words entered in the same sequence they were entered 
          without duplicates.
 """
+
+    # Initialize state variables.
     list_of_words = list()
 
+    # Read user input and add to list avoiding duplicates.
     while True:
         word = input("Enter a word or hit return to terminate: ")
         if word == '':break
