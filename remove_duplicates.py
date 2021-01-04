@@ -1,4 +1,5 @@
-"""
+def remove_duplicates():
+    """
 This program reads words from user until the user enters
 a blank line.
 
@@ -7,8 +8,6 @@ a blank line.
 @return: The list of words entered in the same sequence they were entered 
          without duplicates.
 """
-
-def remove_duplicates():
     list_of_words = list()
 
     while True:
