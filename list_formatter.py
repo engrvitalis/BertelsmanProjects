@@ -7,3 +7,11 @@ collect them in a list and format them appropriate separators between them.
 @return: String of words formatted as per specification.
 """
 
+def list_formatter(ls):
+    pass
+
+def main():
+    pass
+
+if __name__ == "__main__":
+    pass
