@@ -23,12 +23,10 @@ def negative_to_positive():
     for i in lst:
         if i < 0:
             final_list.append(i)
-
     # Go through lst and copy zeros to final_list.
     for i in lst:
         if i == 0:
             final_list.append(i)
-
     # Go through lst and copy positive values to final_list.
     for i in lst:
         if i > 0:
@@ -38,7 +36,9 @@ def negative_to_positive():
 
 
 def main():
-    print(negative_to_positive())
+    # Display output as per specification.
+    for i in negative_to_positive():
+        print(i)
 
 
 if __name__ == '__main__':
