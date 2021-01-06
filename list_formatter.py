@@ -8,7 +8,8 @@ collect them in a list and format them appropriate separators between them.
 """
 
 def list_formatter(ls):
-    pass
+    # Join the words with the appropriate conjunction and punctuations.
+    return (', '.join(ls[:-1]) + " and " + ls[-1])
 
 def main():
     # Initialize state variables.
@@ -22,7 +23,7 @@ def main():
             break
         ls.append(word)
 
-    # Format the content of ls.
+    # Format the content of ls and display the results.
     print(list_formatter(ls))
 
 if __name__ == "__main__":
