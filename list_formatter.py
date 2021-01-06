@@ -11,7 +11,19 @@ def list_formatter(ls):
     pass
 
 def main():
-    pass
+    # Initialize state variables.
+    ls = list()
+
+    # Read input from user and save in ls.
+    # Terminate if blank line is entered.
+    while True:
+        word = input("Enter a word or enter blank to stop: ")
+        if word == "":
+            break
+        ls.append(word)
+
+    # Format the content of ls.
+    print(list_formatter(ls))
 
 if __name__ == "__main__":
-    pass
+    main()
