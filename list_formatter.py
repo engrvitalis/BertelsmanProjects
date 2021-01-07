@@ -8,10 +8,11 @@ collect them in a list and format them appropriate separators between them.
 """
 
 def list_formatter(ls):
-    # Join the words with the appropriate conjunction and punctuations
-    # if more than one word.
+    # Check for the number of words keyed in by the user if any
+    # and join the words with the appropriate conjunction and punctuations
+    # if more than one.
     if len(ls) < 1:
-        return ''
+        return f'No input was provided!'
     elif len(ls) == 1:
         return ls[0]
     else:
