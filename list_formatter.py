@@ -17,7 +17,8 @@ def list_formatter(ls):
     elif len(ls) == 1:
         return ls[0]
     else:
-        return (', '.join(ls[:-1]) + " and " + ls[-1])
+        return ', '.join(ls[:-1]) + " and " + ls[-1]
+
 
 def main():
     # Initialize state variables.
