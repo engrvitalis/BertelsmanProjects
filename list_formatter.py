@@ -8,8 +8,14 @@ collect them in a list and format them appropriate separators between them.
 """
 
 def list_formatter(ls):
-    # Join the words with the appropriate conjunction and punctuations.
-    return (', '.join(ls[:-1]) + " and " + ls[-1])
+    # Join the words with the appropriate conjunction and punctuations
+    # if more than one word.
+    if len(ls) < 1:
+        return ''
+    elif len(ls) == 1:
+        return ls[0]
+    else:
+        return (', '.join(ls[:-1]) + " and " + ls[-1])
 
 def main():
     # Initialize state variables.
