@@ -1,6 +1,7 @@
 """
 This program reads successive input of words from the user,
-collect them in a list and format them appropriate separators between them.
+collect them in a list and format them by inserting appropriate 
+punctuations and conjuction between them.
 
 @params: String - words. Separate them by hitting return after each word.
          Hit return twice to end entry.
