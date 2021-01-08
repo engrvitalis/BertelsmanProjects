@@ -1,4 +1,4 @@
-def num_generator():
+def lottery_numbers():
     """
     This function will generate six random numbers between 1 and 49
     in ascending order without repetition.
@@ -31,7 +31,7 @@ def main():
     # Generate six random integers with repetition and 
     # display the output on a single line separated by spaces.
     print()
-    for num in num_generator():
+    for num in lottery_numbers():
         print(num, end=' ')
 
 
