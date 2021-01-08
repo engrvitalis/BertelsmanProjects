@@ -29,7 +29,7 @@ def num_generator():
 
 def main():
     # Generate six random integers with repetition and 
-    # display the output on a single line separated by spces.
+    # display the output on a single line separated by spaces.
     print()
     for num in num_generator():
         print(num, end=' ')
