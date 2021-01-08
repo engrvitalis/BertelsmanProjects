@@ -34,24 +34,23 @@ def shuffle(deck):
     control_list = [num for num in range(len(deck))]
     new_deck = []
     
-    while len(control_list) > 0:
+    while len(control_list) != 0:
         # Generate random index
         index = random.randrange(0, len(control_list))
-
-        # Subscribe into deck using control_list element as index
-        #  and append the return value to new deck list. 
+        # Randomly select card in deck and add to new deck.
         new_deck.append(deck[control_list[index]])
-        print(len(control_list), index)
-        control_list.pop(control_list[index])
+        # Remove index from pool of index to select from to avoid duplicates.
+        control_list.pop(index)
 
 
-    return control_list
+    return new_deck
 
 
 def main():
-    print(createDeck())
-    print()
-    print(shuffle(createDeck()))
+    # Display deck before and after shuffle.
+    print(f"Deck before shuffle:\n{createDeck()}\n")
+    print('*' * 120)
+    print(f"\nDeck after shuffle:\n{shuffle(createDeck())}")
 
 
 if __name__ == '__main__':
