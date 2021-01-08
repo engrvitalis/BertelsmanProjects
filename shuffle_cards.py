@@ -18,12 +18,15 @@ def createDeck():
     # Generate a complete deck of cards by concatenating the values and the suits appropriately.
     deck = [(j + card_suit[i]) for i in card_suit.keys() for j in card_value]
 
-
     return deck
 
 
 def shuffle(deck):
-    pass
+    """This program will randomly shuffle the positions of the cards in the deck.
+    
+    @params: List - Original deck of cards.
+    @return: List - Shuffled deck of cards.
+    """
 
 
 def main():
