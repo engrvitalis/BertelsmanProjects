@@ -48,8 +48,8 @@ def shuffle(deck):
 
 def main():
     # Display deck before and after shuffle.
-    print(f"Deck before shuffle:\n{createDeck()}\n")
-    print('*' * 120)
+    print()
+    print(f"Deck before shuffle:\n{createDeck()}")
     print(f"\nDeck after shuffle:\n{shuffle(createDeck())}")
 
 
