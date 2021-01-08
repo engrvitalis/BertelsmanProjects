@@ -39,7 +39,7 @@ def shuffle(deck):
         index = random.randrange(0, len(control_list))
         # Randomly select card in deck and add to new deck.
         new_deck.append(deck[control_list[index]])
-        # Remove index from pool of index to select from to avoid duplicates.
+        # Remove used index from pool of index to select from to avoid duplicates.
         control_list.pop(index)
 
 
