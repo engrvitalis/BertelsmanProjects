@@ -1,12 +1,12 @@
-"""
-This program will generate six random number between 1 and 49
-in ascending order without repetition.
-
-@param: None
-@return: Six integers arranged in ascending order.
-"""
-
 def num_generator():
+    """
+    This function will generate six random numbers between 1 and 49
+    in ascending order without repetition.
+
+    @param: None
+    @return: A list of six integers.
+    """
+
     # import relevant modules.
     import random
 
@@ -22,12 +22,15 @@ def num_generator():
             continue
         else:
             ls.append(num)
+    ls.sort()
 
     return ls
 
 
 def main():
-    # Display the output as per specification.
+    # Generate six random integers with repetition and 
+    # display the output on a single line separated by spces.
+    print()
     for num in num_generator():
         print(num, end=' ')
 
