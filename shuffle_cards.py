@@ -28,9 +28,30 @@ def shuffle(deck):
     @return: List - Shuffled deck of cards.
     """
 
+    import random
+
+    # Initialize variable.
+    control_list = [num for num in range(len(deck))]
+    new_deck = []
+    
+    while len(control_list) > 0:
+        # Generate random index
+        index = random.randrange(0, len(control_list))
+
+        # Subscribe into deck using control_list element as index
+        #  and append the return value to new deck list. 
+        new_deck.append(deck[control_list[index]])
+        print(len(control_list), index)
+        control_list.pop(control_list[index])
+
+
+    return control_list
+
 
 def main():
     print(createDeck())
+    print()
+    print(shuffle(createDeck()))
 
 
 if __name__ == '__main__':
