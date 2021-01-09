@@ -25,5 +25,22 @@ def countRange(lst, min_value, max_value):
 
 def main():
     # Initialize state variables.
-    ls = 
-    # Request user input.
+    ls = list()
+    min_value = None
+    max_value = None
+
+    # Request user to provide list of numbers.
+    while True:
+        num = input('Enter a number or blank line to stop): ')
+        if num == '':
+            break
+        else:
+            try:
+                num = int(num)
+                ls.append(int(num))
+            except TypeError:
+                print('You can only enter an int or a float!')
+                continue
+
+    # Request user to provide minimum and maximum values.
+    # min_value = input
