@@ -47,11 +47,16 @@ def shuffle(deck):
 
 
 def main():
-    # Display deck before and after shuffle.
-    print()
-    print(f"Deck before shuffle:\n{createDeck()}")
-    print(f"\nDeck after shuffle:\n{shuffle(createDeck())}")
+    # Initialize counter.
+    index = 0
 
+    # Display deck before and after shuffle side by side.
+    print()
+    print(f"Deck before shuffle\tDeck after shuffle")
+    for i in range(4):
+        for j in range(13):
+            print(f'{createDeck()[index]}\t\t\t{shuffle(createDeck())[index]}')
+            index += 1
 
 if __name__ == '__main__':
     main()
