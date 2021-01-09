@@ -29,18 +29,16 @@ def main():
     min_value = None
     max_value = None
 
-    # Request user to provide list of numbers.
+    # Request user to provide list of numbers and save it in a list.
     while True:
         num = input('Enter a number or blank line to stop): ')
         if num == '':
             break
+        elif num.isdigit():
+            ls.append(int(num))
         else:
-            try:
-                num = int(num)
-                ls.append(int(num))
-            except TypeError:
-                print('You can only enter an int or a float!')
-                continue
+            print('You can only enter an int or a float!')
+            continue
 
     # Request user to provide minimum and maximum values.
     # min_value = input
