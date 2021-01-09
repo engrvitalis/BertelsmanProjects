@@ -41,26 +41,43 @@ def main():
         num = input('Enter a number or blank line to stop): ')
         if num == '':
             break
-        elif num.isdigit():
+        try:
             ls.append(int(num))
-        else:
-            print('You can only enter an int or a float!')
-            continue
+        except ValueError:
+            try:
+                ls.append(float(num))
+            except ValueError:
+                print("You can only enter an int or a float!")
     
     print()
-    # Request user to provide minimum and maximum values.
+    # Continue only if user provided a list of numbers to process.
     if len(ls) != 0:
+        # Request user to provide minimum and maximum values.
         while True:
             min_value = input("Provide a minimum value to define a range: ")
             max_value = input("Provide a maximum value to define a range: ")
             if min_value == '' or max_value == '':
                 break
             else:
-                if not min_value.isdigit():
-                    print("Minimum value must be a number!")
-                    continue
-                if not max_value.isdigit():
-                    print("Maximum value must be a number!")
+                try:
+                    min_value = int(min_value)
+                except ValueError:
+                    try:
+                        min_value = float(min_value)
+                    except ValueError:
+                        print("Enter either integer or float!")
+                        continue
+                
+                try:
+                    max_value = float(max_value)
+                except ValueError:
+                    try:
+                        max_value = float(max_value)
+                    except ValueError:
+                        print("Enter either integer or float!")
+                        continue
+
+               
             break
         
         # Make sure you have data to process.
@@ -72,9 +89,11 @@ def main():
                 max_value = max(ls) + 1
             if min_value == "":
                 min_value = min(ls)
+                max_value += 1
             if max_value == "":
-                max_value = max(ls)
+                max_value = max(ls) + 1
 
+            print(f'Min: {min_value}, Max: {max_value}, List: {ls}')
             # Count values based on the minimum and maximum values.
             print(countRange(ls, min_value, max_value))
 
