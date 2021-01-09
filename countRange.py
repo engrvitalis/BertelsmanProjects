@@ -17,7 +17,7 @@ def countRange(lst, min_value, max_value):
     # Move through the list and increment counter if
     # number is within specified range.
     for num in lst:
-        if min_value <= num < max_value:
+        if int(min_value) <= num < int(max_value):
             count += 1
 
     return count
@@ -53,6 +53,18 @@ def main():
             if not max_value.isdigit():
                 print("Maximum value must be a number!")
         break
+    
+    # Make sure you have data to process.
+    if len(ls) != 0:
+        # Set default values incase of blank line entry by user
+        # for minimum and maximum values.
+        if min_value == "":
+            min_value = min(ls)
+        if max_value == "":
+            max_value = max(ls)
+
+        # Count values based on the minimum and maximum values.
+        print(countRange(ls, min_value, max_value))
 
 if __name__ == "__main__":
     main()
