@@ -13,12 +13,12 @@ def createDeck():
     card_suit = {'spade': 's', 'hearts': 'h', 'diamonds': 'd', 'clubs': 'c'}
 
     # Generate a complete list of card values.
-    card_value = card_value_1 + card_value_2
+    card_values = card_value_1 + card_value_2
 
     # Generate a complete deck of cards by concatenating the values and the suits appropriately.
-    deck = [(j + card_suit[i]) for i in card_suit.keys() for j in card_value]
+    deck = [(j + card_suit[i]) for i in card_suit.keys() for j in card_values]
 
-    return tuple(deck)
+    return deck
 
 
 def shuffle(deck):
@@ -43,7 +43,7 @@ def shuffle(deck):
         control_list.pop(index)
 
 
-    return tuple(new_deck)
+    return new_deck
 
 
 def main():
