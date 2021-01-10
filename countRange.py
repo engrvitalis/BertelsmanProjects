@@ -53,10 +53,15 @@ def main():
 
     t = create_list()
     for l in t:
-        while min_val > max_val:
+        while True:
             min_val = random.randrange(min(l), max(l))
             max_val = random.randrange(min(l), max(l))
+            if min_val < max_val:
+                break
         
+        print(f'The range ({min_val} <= number < {max_val}) in {l} contains {countRange(l, min_val, max_val)} element(s).')
+
+
 
         
 
