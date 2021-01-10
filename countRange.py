@@ -25,18 +25,23 @@ def countRange(lst, min_value, max_value):
     # Move through the list and increment counter if
     # number is within specified range.
     for num in lst:
-        if int(min_value) <= num < int(max_value):
+        if min_value <= num < max_value:
             count += 1
 
     return count
+
+
+def validate_number(num):
+    """
+    Validate number input from user.
+    """
 
 
 def main():
     # Initialize state variables.
     ls = list()
 
-    # Request user to provide list of numbers, reject invalid inputs
-    # and collect the good inputs in ls.
+    # Request and Validate Input of number(s) from user.
     while True:
         num = input('Enter a number or blank line to stop): ')
         if num == '':
@@ -50,15 +55,13 @@ def main():
                 print("You can only enter an int or a float!")
     
     print()
-    # Continue only if user provided a list of numbers to process.
+    # Continue only if user provided at least one valid numbers to process.
     if len(ls) != 0:
-        # Request user to provide minimum and maximum values.
+        # Request and Validate input of minimum and maximum values.
         while True:
             min_value = input("Provide a minimum value to define a range: ")
             max_value = input("Provide a maximum value to define a range: ")
-            if min_value == '' or max_value == '':
-                break
-            else:
+            if min_value != "":
                 try:
                     min_value = int(min_value)
                 except ValueError:
@@ -67,7 +70,8 @@ def main():
                     except ValueError:
                         print("Enter either integer or float!")
                         continue
-                
+
+            if max_value != "":
                 try:
                     max_value = float(max_value)
                 except ValueError:
@@ -77,7 +81,6 @@ def main():
                         print("Enter either integer or float!")
                         continue
 
-               
             break
         
         # Make sure you have data to process.
@@ -89,6 +92,7 @@ def main():
                 max_value = max(ls) + 1
             if min_value == "":
                 min_value = min(ls)
+                print(type(max_value), max_value)
                 max_value += 1
             if max_value == "":
                 max_value = max(ls) + 1
