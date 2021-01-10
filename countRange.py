@@ -66,11 +66,5 @@ def main():
         # Display the output.
         print(f'{i}. The range ({min_val} <= number < {max_val}) in {l} contains {countRange(l, min_val, max_val)} element(s).')
 
-
-
-        
-
-
-
 if __name__ == "__main__":
     main()
