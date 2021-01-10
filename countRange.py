@@ -23,7 +23,7 @@ def countRange(ls, min_value, max_value):
 
     return count
 
-def create_list(num_cases=10, min_size=3, max_size=10, start_range=-100, end_range=100):
+def create_list(num_cases=20, min_size=3, max_size=10, start_range=-100, end_range=100):
     # Generating several test cases.
     import random
 
@@ -50,16 +50,21 @@ def main():
     # Generate some lists.
     import random
 
-
+    # Create series of list.
     t = create_list()
+    # Initialize counter.
+    i = 0
+    # Generate the ranges of interest and count the elements inside the it.
     for l in t:
         while True:
             min_val = random.randrange(min(l), max(l))
             max_val = random.randrange(min(l), max(l))
             if min_val < max_val:
                 break
-        
-        print(f'The range ({min_val} <= number < {max_val}) in {l} contains {countRange(l, min_val, max_val)} element(s).')
+        i += 1
+
+        # Display the output.
+        print(f'{i}. The range ({min_val} <= number < {max_val}) in {l} contains {countRange(l, min_val, max_val)} element(s).')
 
 
 
