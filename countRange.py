@@ -1,22 +1,15 @@
-def countRange(lst, min_value, max_value):
+def countRange(ls, min_value, max_value):
     """
     Description:
              This program will count the number within the range: 
              min_value <= number < max_value
-
-             If min_value and max_value were not provided, it will return the 
-             length of the list. 
-             If only max_value was provided, it will count all numbers within 
-             the range: number < max_value.
-             if only min_value was provided, it will count all numbers within 
-             the range: min_value <= number.
 
     @params: List - The parameter to be processed. eg. [2,3,4]
              Integer or float - min_value(Minimum value of the range).
              Integer or float - max_value(Maximum value of the range).
     @return: Integer - Elements count from and including min_value
              and up to but excluding max_value.
-             ie. min_value <= element < max_value.
+             ie. min_value <= number < max_value.
     """
 
     # Initialize counter
@@ -24,9 +17,11 @@ def countRange(lst, min_value, max_value):
 
     # Move through the list and increment counter if
     # number is within specified range.
-    for num in lst:
+    for num in ls:
         if min_value <= num < max_value:
             count += 1
+
+    # print(f'List: {ls} | Min: {min_value} | Max: {max_value}')
 
     return count
 
@@ -91,8 +86,10 @@ def main():
             if max_value != "":
                 if validate_number(max_value)[1] == 'integer':
                     max_value = int(max_value)
+                    print(f'max1: {max_value}')
                 elif validate_number(max_value)[1] == 'float':
                     max_value = float(max_value)
+                    print(f'float: {max_value}')
                 else:
                     print("Your maximum value is not a number! Please, re-enter values!")
                     continue
@@ -105,15 +102,16 @@ def main():
             # for minimum or maximum values or both.
             if min_value == "" and max_value == "":
                 min_value = min(ls)
-                max_value = max(ls) + 1
-            if min_value == "":
+                # max_value = max(ls) + 1
+            elif min_value == "":
                 min_value = min(ls)
-                # max_value += 1
-            if max_value == "":
-                max_value = max(ls) + 1
-
+            else:
+                max_value = max(ls)
+            print(f'Min: {min_value}, Max: {max_value}, List: {ls}')
             # Count values based on the minimum and maximum values.
             print(countRange(ls, min_value, max_value))
 
 if __name__ == "__main__":
-    main()
+    # main()
+    # print(countRange([2.2, 3.5, 2, 5, 7.1, 8], 2, 7.1))
+    # print(validate_number('l'))
