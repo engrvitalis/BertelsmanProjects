@@ -34,7 +34,20 @@ def countRange(lst, min_value, max_value):
 def validate_number(num):
     """
     Validate number input from user.
+
+    @param: String eg. '3', '2.3' etc.
+    @return Boolean eg. True or False.
     """
+
+    try:
+        int(num)
+        return True
+    except ValueError:
+        try:
+            float(num)
+            return True
+        except ValueError:
+            return False
 
 
 def main():
@@ -46,40 +59,34 @@ def main():
         num = input('Enter a number or blank line to stop): ')
         if num == '':
             break
-        try:
-            ls.append(int(num))
-        except ValueError:
-            try:
-                ls.append(float(num))
-            except ValueError:
-                print("You can only enter an int or a float!")
+        else:
+            if validate_number(num):
+                ls.append(int(num))
+            else:
+                print("Invalid number. Please enter a float or int!")
+                continue
     
     print()
     # Continue only if user provided at least one valid numbers to process.
     if len(ls) != 0:
-        # Request and Validate input of minimum and maximum values.
+        # Request and Validate input values.
         while True:
             min_value = input("Provide a minimum value to define a range: ")
             max_value = input("Provide a maximum value to define a range: ")
+            # Validate minimum value.
             if min_value != "":
-                try:
+                if validate_number(min_value):
                     min_value = int(min_value)
-                except ValueError:
-                    try:
-                        min_value = float(min_value)
-                    except ValueError:
-                        print("Enter either integer or float!")
-                        continue
-
+                else:
+                    print("Your minimum value is not a number! Please, re-enter values!")
+                    continue
+            # Validate maximum value.
             if max_value != "":
-                try:
-                    max_value = float(max_value)
-                except ValueError:
-                    try:
-                        max_value = float(max_value)
-                    except ValueError:
-                        print("Enter either integer or float!")
-                        continue
+                if validate_number(max_value):
+                    min_value = int(max_value)
+                else:
+                    print("Your maximum value is not a number! Please, re-enter values!")
+                    continue
 
             break
         
