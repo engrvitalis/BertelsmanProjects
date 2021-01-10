@@ -36,18 +36,17 @@ def validate_number(num):
     Validate number input from user.
 
     @param: String eg. '3', '2.3' etc.
-    @return Boolean eg. True or False.
+    @return Boolean eg. (True, 'integer', int(num)), (True, 'float', float(num)) or False.
     """
 
     try:
-        int(num)
-        return True
+        return (True, 'integer', int(num))
     except ValueError:
         try:
-            float(num)
-            return True
+            return (True, 'float', float(num))
         except ValueError:
             return False
+
 
 
 def main():
@@ -60,8 +59,10 @@ def main():
         if num == '':
             break
         else:
-            if validate_number(num):
+            if validate_number(num)[1] == 'integer':
                 ls.append(int(num))
+            elif validate_number(num)[1] == 'float':
+                ls.append(float(num))
             else:
                 print("Invalid number. Please enter a float or int!")
                 continue
@@ -79,15 +80,19 @@ def main():
                 continue
             # Validate minimum value.
             if min_value != "":
-                if validate_number(min_value):
+                if validate_number(min_value)[1] == 'integer':
                     min_value = int(min_value)
+                elif validate_number(min_value)[1] == 'float':
+                    min_value = float(min_value)
                 else:
                     print("Your minimum value is not a number! Please, re-enter values!")
                     continue
             # Validate maximum value.
             if max_value != "":
-                if validate_number(max_value):
+                if validate_number(max_value)[1] == 'integer':
                     max_value = int(max_value)
+                elif validate_number(max_value)[1] == 'float':
+                    max_value = float(max_value)
                 else:
                     print("Your maximum value is not a number! Please, re-enter values!")
                     continue
@@ -103,7 +108,7 @@ def main():
                 max_value = max(ls) + 1
             if min_value == "":
                 min_value = min(ls)
-                max_value += 1
+                # max_value += 1
             if max_value == "":
                 max_value = max(ls) + 1
 
