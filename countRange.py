@@ -50,6 +50,7 @@ def main():
     # Generate some lists.
     import random
 
+
     # Create series of list.
     t = create_list()
     # Initialize counter.
