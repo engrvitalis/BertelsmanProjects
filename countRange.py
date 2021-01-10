@@ -73,6 +73,10 @@ def main():
         while True:
             min_value = input("Provide a minimum value to define a range: ")
             max_value = input("Provide a maximum value to define a range: ")
+            # Check for min_value == max_value senario.
+            if min_value != '' and max_value != '' and min_value == max_value:
+                print(f'Minimum value cannot be equal to Maximum value: Min = {min_value}; Max = {max_value}')
+                continue
             # Validate minimum value.
             if min_value != "":
                 if validate_number(min_value):
@@ -83,14 +87,14 @@ def main():
             # Validate maximum value.
             if max_value != "":
                 if validate_number(max_value):
-                    min_value = int(max_value)
+                    max_value = int(max_value)
                 else:
                     print("Your maximum value is not a number! Please, re-enter values!")
                     continue
 
             break
         
-        # Make sure you have data to process.
+        # Continue if there is valid data to process.
         if len(ls) != 0:
             # Set default values incase of blank line entry by user
             # for minimum or maximum values or both.
@@ -99,12 +103,10 @@ def main():
                 max_value = max(ls) + 1
             if min_value == "":
                 min_value = min(ls)
-                print(type(max_value), max_value)
                 max_value += 1
             if max_value == "":
                 max_value = max(ls) + 1
 
-            print(f'Min: {min_value}, Max: {max_value}, List: {ls}')
             # Count values based on the minimum and maximum values.
             print(countRange(ls, min_value, max_value))
 
