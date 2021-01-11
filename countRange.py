@@ -98,6 +98,8 @@ def main():
     # Test for int.
     # Create series of list.
     int_t = create_int_list()
+    # Initialize counter.
+    count = 1
     # Generate the ranges of interest and count the elements inside the it.
     for l in int_t:
         while True:
@@ -105,9 +107,10 @@ def main():
             max_val = random.randrange(min(l), max(l))
             if min_val < max_val:
                 break
-
+        
         # Display the output.
-        print(f'The range ({min_val} <= number < {max_val}) in {l} contains {countRange(l, min_val, max_val)} element(s)')
+        print(f'{count}. The range ({min_val} <= number < {max_val}) in {l} contains {countRange(l, min_val, max_val)} element(s)')
+        count += 1
 
 # Test for floats.
     # Create series of list.
@@ -121,8 +124,8 @@ def main():
                 break
 
         # Display the output.
-        print(f'The range ({round(min_val, 2)} <= number < {round(max_val, 2)}) in {l} contains {countRange(l, min_val, max_val)} element(s)')
-
+        print(f'{count}. The range ({round(min_val, 2)} <= number < {round(max_val, 2)}) in {l} contains {countRange(l, min_val, max_val)} element(s)')
+        count += 1
 
 
 if __name__ == "__main__":
