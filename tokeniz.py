@@ -15,8 +15,10 @@ def tokeniz(string):
     for char in string:
         if char in ['*', '/', '^', '(', ')']:
             tokens.append(char)
-        elif string.index(char) > 0 and (string[string.index(char) - 1].isdigit() or string[string.index(char) - 1]) == ')':
-
+        else:
+            n = string[string.index(char) - 1]
+            if char in ['+', '-'] and string.index(char) > 0 and n.isdigit() or n == ')':
+                tokens.append(char)
 
     return tokens
 
@@ -46,6 +48,7 @@ def main():
     # Request input from the user.
     # s = input("Enter mathematical expression: ")
     s = 'witi5+34()+-*'
+    print(s)
     print(tokeniz(s))
 
 
