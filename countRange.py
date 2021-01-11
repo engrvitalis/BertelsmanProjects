@@ -24,7 +24,7 @@ def countRange(ls, min_value, max_value):
     return count
 
 
-def create_int_list(num_cases=5, min_size=3, max_size=10, start_range=-100, end_range=100):
+def create_int_list(num_cases=10, min_size=3, max_size=10, start_range=-100, end_range=100):
     """
     This function a tuple of lists containing integers.
 
@@ -57,7 +57,7 @@ def create_int_list(num_cases=5, min_size=3, max_size=10, start_range=-100, end_
     return tuple(main_ls)
 
 
-def create_float_list(num_cases=5, min_size=3, max_size=10, start_range=-100, end_range=100):
+def create_float_list(num_cases=10, min_size=3, max_size=10, start_range=-100, end_range=100):
     """
     This function a tuple of lists containing floats.
 
@@ -91,14 +91,13 @@ def create_float_list(num_cases=5, min_size=3, max_size=10, start_range=-100, en
 
 
 def main():
-    # Generate some lists.
+    # Generate some lists and test for int and floating point numbers.
     import random
 
 
     # Test for int.
     # Create series of list.
     int_t = create_int_list()
-    # Initialize counter.
     # Generate the ranges of interest and count the elements inside the it.
     for l in int_t:
         while True:
@@ -113,8 +112,6 @@ def main():
 # Test for floats.
     # Create series of list.
     float_t = create_float_list()
-    # Initialize counter.
-    i = 0
     # Generate the ranges of interest and count the elements inside the it.
     for l in float_t:
         while True:
@@ -122,7 +119,6 @@ def main():
             max_val = random.uniform(min(l), max(l))
             if min_val < max_val:
                 break
-        i += 1
 
         # Display the output.
         print(f'The range ({round(min_val, 2)} <= number < {round(max_val, 2)}) in {l} contains {countRange(l, min_val, max_val)} element(s)')
