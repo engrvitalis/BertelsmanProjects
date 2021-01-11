@@ -9,10 +9,12 @@ def tokeniz(string):
 
     # Initialize state variables.
     tokens = list()
+
     # Go through the string and extract the tokens.
     for char in string:
-        if char in operators or char.isdigit():
-            tokens.append(char)
+        if is_operator(char):
+            s = string[string.index(char)]
+            print(s)
 
     return tokens
 
@@ -28,16 +30,23 @@ def is_operator(char):
 
     return False
 
-def is_signed_number()
+
+def strip_space(s):
+    # This function splits a string argument into individual characters.
+
+    # remove space(s) from the string and return result.
+    return ''.join(s.split())
+
 
 def main():
     # Initialize state variables.
     new_s = []
     # Request input from the user.
     # s = input("Enter mathematical expression: ")
-    s = 'witi534()'
+    s = 'witi534()+-*'
     print(tokeniz(s))
 
 
 if __name__ == "__main__":
     main()
+    # print(strip_space('rtry535  77h'))
