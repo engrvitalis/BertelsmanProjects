@@ -24,7 +24,7 @@ def countRange(ls, min_value, max_value):
     return count
 
 
-def create_int_list(num_cases=20, min_size=3, max_size=10, start_range=-100, end_range=100):
+def create_int_list(num_cases=5, min_size=3, max_size=10, start_range=-100, end_range=100):
     """
     This function a tuple of lists containing integers.
 
@@ -57,7 +57,7 @@ def create_int_list(num_cases=20, min_size=3, max_size=10, start_range=-100, end
     return tuple(main_ls)
 
 
-def create_float_list(num_cases=20, min_size=3, max_size=10, start_range=-100, end_range=100):
+def create_float_list(num_cases=5, min_size=3, max_size=10, start_range=-100, end_range=100):
     """
     This function a tuple of lists containing floats.
 
