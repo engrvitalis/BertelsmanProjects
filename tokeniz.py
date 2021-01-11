@@ -11,10 +11,12 @@ def tokeniz(string):
     tokens = list()
 
     # Go through the string and extract the tokens.
+
     for char in string:
-        if is_operator(char):
-            s = string[string.index(char)]
-            print(s)
+        if char in ['*', '/', '^', '(', ')']:
+            tokens.append(char)
+        elif string.index(char) > 0 and (string[string.index(char) - 1].isdigit() or string[string.index(char) - 1]) == ')':
+
 
     return tokens
 
@@ -23,7 +25,7 @@ def is_operator(char):
     # Return True if char is a mathematical operator or False otherwise.
 
     # Initialize variable.
-    operators = ('+', '-', '*', '/', '*', '/', '=')
+    operators = ('+', '-', '*', '^', '/', '=')
 
     if char in operators:
         return True
@@ -43,7 +45,7 @@ def main():
     new_s = []
     # Request input from the user.
     # s = input("Enter mathematical expression: ")
-    s = 'witi534()+-*'
+    s = 'witi5+34()+-*'
     print(tokeniz(s))
 
 
