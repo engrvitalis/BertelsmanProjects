@@ -35,8 +35,15 @@ def sieve(num):
 
 def main():
     # Request input from user and get prime numbers up to the input.
-    # "Display the numbers in a list"
-    print(f'\nThe primes are:\n{sieve(int(input("Enter an integer: ")))}')
+    i = 1
+    primes = sieve(int(input("Enter an integer: ")))
+    print("The primes are: ")
+
+    for prime in primes:
+        print(f'{prime}')
+        i += 1
+
+    print(f'Total number of primes: {i}')
 
 if __name__=='__main__': 
     main()
