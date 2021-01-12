@@ -39,7 +39,7 @@ def create_dict():
     for i in range(num_cases):
 
         # Initialize variables.
-        dic_len = random.randrange(2, 10)
+        dic_len = random.randrange(4, 7)
         dic = dict()
 
         for j in range(dic_len):
@@ -50,7 +50,7 @@ def create_dict():
             # Convert key_list to string to get a random key.
             key = ''.join(key_list)
             # Generate a random value.
-            value = random.randrange(0, 20)
+            value = random.randrange(0, 5)
             # Populate dic with key value pair.
             if key not in dic:
                 dic[key] = value
@@ -61,12 +61,15 @@ def create_dict():
     return ls
 
 
-
-
-
 def main():
-    print(create_dict())
-    # print(reverseLookup({'me': 4, 'you': 6, 'i': 7, 'jjs': 7}, 8))
+    import random
+
+
+    # Generate dictionaries for testing.
+    for dic in create_dict():
+        # Generate a value and lookup the keys.
+        value = random.randrange(0, 5)
+        print(f'\nDict: {dic}\nValue: {value} is mapped to {reverseLookup(dic, value)} keys')
 
 if __name__ == "__main__":
     main()
