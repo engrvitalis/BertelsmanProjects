@@ -37,7 +37,7 @@ def main():
     # Request input from user and get prime numbers up to the input.
     i = 1
     primes = sieve(int(input("Enter an integer: ")))
-    print("The primes are: ")
+    print("\nThe primes are: ")
 
     for prime in primes:
         print(f'{prime}')
