@@ -18,6 +18,9 @@ def reverseLookup(dic, value):
     return ls
 
 
+def create_dict():
+
+
 def main():
     pass
     # print(reverseLookup({'me': 4, 'you': 6, 'i': 7, 'jjs': 7}, 8))
