@@ -43,7 +43,7 @@ def main():
         print(f'{prime}')
         i += 1
 
-    print(f'Total number of primes: {i}')
+    print(f'\nTotal number of primes: {i}')
 
 if __name__=='__main__': 
     main()
