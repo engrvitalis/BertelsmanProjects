@@ -19,7 +19,7 @@ def reverseLookup(dic, value):
     return ls
 
 
-def create_dict():
+def create_dicts():
     """
     This program returns a list containing automatically generated
     dictionaries, ie. a list of dictionaries with the length of the 
@@ -33,8 +33,12 @@ def create_dict():
 
 
     # Initialize state variables.
-    ls = list()
     num_cases = 10
+    ind = 0
+
+    # Create ls with size num_cases and pre-allocate zeros to as placeholders 
+    # for the actual elements, dic.
+    ls = [0 for i in range(num_cases)]
 
     for i in range(num_cases):
 
@@ -55,9 +59,12 @@ def create_dict():
             if key not in dic:
                 dic[key] = value
         
-        # Populate ls with dic.
-        ls.append(dic)
+        # Replace the next zero placeholder with dic.
+        ls[ind] = dic
+        # Increment index.
+        ind += 1
 
+    # Return a list of dictionaries.
     return ls
 
 
@@ -66,7 +73,7 @@ def main():
 
 
     # Generate dictionaries for testing.
-    for dic in create_dict():
+    for dic in create_dicts():
         # Generate a value and lookup the keys.
         value = random.randrange(0, 5)
         print(f'\nDict: {dic}\nValue: {value} is mapped to {reverseLookup(dic, value)} keys')
