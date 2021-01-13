@@ -5,7 +5,7 @@ def reverseLookup(dic, value):
 
     @param: Dictionary
             value - int, float, str etc.
-    @return: list of keys.
+    @return: list of keys of type string.
     """
 
     # Search for value in dictionary and return the key in a list if it exist.
