@@ -36,7 +36,7 @@ def create_dicts():
     num_cases = 10
     ind = 0
 
-    # Create ls with size num_cases and pre-allocate zeros to as placeholders 
+    # Create ls with size num_cases and pre-allocate zeros as placeholders 
     # for the actual elements, dic.
     ls = [0 for i in range(num_cases)]
 
