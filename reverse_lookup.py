@@ -36,8 +36,7 @@ def create_dicts():
     num_cases = 10
     ind = 0
 
-    # Create ls with size num_cases and pre-allocate zeros as placeholders 
-    # for the actual elements, dic.
+    # Pre-allocate ls with zero placeholders.
     ls = [0 for i in range(num_cases)]
 
     for i in range(num_cases):
@@ -59,7 +58,7 @@ def create_dicts():
             if key not in dic:
                 dic[key] = value
         
-        # Replace the next zero placeholder with dic.
+        # Replace each zero placeholder with dic.
         ls[ind] = dic
         # Increment index.
         ind += 1
