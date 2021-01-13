@@ -47,11 +47,11 @@ def create_dicts():
             key = ''.join(key_list)
             # Generate a random value.
             value = random.randrange(0, 5)
-            # Populate dic with key value pair.
+            # Populate dic with key-value pair.
             if key not in dic:
                 dic[key] = value
         
-        # Replace each zero placeholder with dic.
+        # Replace each zero placeholder with appropriate dic.
         ls[ind] = dic
         # Increment index.
         ind += 1
