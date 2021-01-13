@@ -8,15 +8,8 @@ def reverseLookup(dic, value):
     @return: list of keys.
     """
 
-    # Initialize variable
-    ls = list()
-
-    # Search for value in dictionary and the key in a list if found.
-    for k, v in dic.items():
-        if v == value:
-            ls.append(k)
-
-    return ls
+    # Search for value in dictionary and return the key in a list if it exist.
+    return [k for k, v in dic.items() if v == value]
 
 
 def create_dicts():
