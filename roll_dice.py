@@ -24,7 +24,11 @@ def main():
     # Simulate dice roll and document num and frequency in results.
     for i in range(1000):
         num = roll_dice()
-        results[num] = results.get(num, 0) + 1
+        if num in results.keys():
+            results[num][0] += 1
+        else:
+            results[num] = [0, 0, 0]
+            results[num][0] += 1
 
     print(results)
 
