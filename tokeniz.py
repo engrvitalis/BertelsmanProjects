@@ -7,20 +7,34 @@ def tokeniz(string):
     @return: List of tokens.
     """
 
-    # Initialize state variables.
+    # Initialize variables.
     tokens = list()
+    i = 0
 
-    # Go through the string and extract the tokens.
+    # Remove spaces.
+    string = strip_space(string)
 
-    for char in string:
-        if char in ['*', '/', '^', '(', ')']:
-            tokens.append(char)
-        else:
-            n = string[string.index(char) - 1]
-            if char in ['+', '-'] and string.index(char) > 0 and n.isdigit() or n == ')':
-                tokens.append(char)
+    while i < len(string):
+        # 
+        if is_operator(string[i]):
+            if i != 0 and i != len(string)-1 and string[i] in ['+', '-']:
+                if string[i-1] == ')' or string[i-1].isdigit():
+                    tokens.append(string[i])
+                else:
+                    tokens.append(''.join(string[i:i+2]))
+                    i += 1
+            else:
+                if string[i] in ['+', '-'] and i != len(string) - 1 and string[i + 1].isdigit():
+                    tokens.append(''.join(string[i:i+2]))
+                    i += 1
+                else:
+                    tokens.append(string[i])
+        elif string[i] in ['(', ')'] or string[i].isdigit():
+            tokens.append(string[i])
+        i += 1
 
     return tokens
+
 
 
 def is_operator(char):
@@ -39,7 +53,7 @@ def strip_space(s):
     # This function splits a string argument into individual characters.
 
     # remove space(s) from the string and return result.
-    return ''.join(s.split())
+    return list(''.join(s.split()))
 
 
 def main():
@@ -47,7 +61,7 @@ def main():
     new_s = []
     # Request input from the user.
     # s = input("Enter mathematical expression: ")
-    s = 'witi5+34()+-*'
+    s = '-2 + 3 * 6 + (3 ^ 3) * (-5) / 6+'
     print(s)
     print(tokeniz(s))
 
