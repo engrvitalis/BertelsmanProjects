@@ -6,4 +6,12 @@ def unique_char(string):
     @return: Integer
     """
 
-    
+    return set(string)
+
+
+def main():
+    print(unique_char('skskgjrtjjj'))
+
+
+if __name__ == "__main__":
+    main()
