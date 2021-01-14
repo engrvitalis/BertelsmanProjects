@@ -15,3 +15,7 @@ def roll_dice():
 
     # Return the sum.
     return sum(dice_1 + dice_2)
+
+
+def main():
+    
