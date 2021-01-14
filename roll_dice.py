@@ -40,6 +40,7 @@ def main():
     # Print results as per specification.
     print(f'\nTotal\t\tSimulated\tExpected')
     print(f'\t\tPercent\t\tPercent')
+    
     for key in sorted(results):
         print(f'{key}\t\t{results[key][1]}\t\t{results[key][2]}')
 
