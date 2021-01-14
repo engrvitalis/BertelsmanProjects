@@ -14,8 +14,19 @@ def roll_dice():
     dice_2 = random.randrange(1, 6)
 
     # Return the sum.
-    return sum(dice_1 + dice_2)
+    return dice_1 + dice_2
 
 
 def main():
-    
+    # Initialize variable
+    results = dict()
+
+    # Simulate dice roll and document num and frequency in results.
+    for i in range(1000):
+        num = roll_dice()
+        results[num] = results.get(num, 0) + 1
+
+    print(results)
+
+if __name__ == "__main__":
+    main()
