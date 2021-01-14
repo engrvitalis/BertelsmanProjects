@@ -7,7 +7,7 @@ def unique_char(string):
     """
 
     # Return the length of unique values.
-    return len(set(string))
+    return len(set(string.lower()))
 
 
 def main():
