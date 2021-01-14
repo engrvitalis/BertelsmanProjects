@@ -73,7 +73,7 @@ def main():
     # Print tokens.
     print("\nIdentified tokens are:")
     for token in tokeniz(s):
-        print(token, end=', ')
+        print(token, end='  ')
 
 
 if __name__ == "__main__":
