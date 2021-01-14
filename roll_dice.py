@@ -37,7 +37,7 @@ def main():
         results[key][1] = round((value[0] / num_roll) * 100, 2)
         results[key][2] = round((p_table[int(key) - 1] / 36) * 100, 2)
     
-    # Print results
+    # Print results as per specification.
     print(f'\nTotal\t\tSimulated\tExpected')
     print(f'\t\tPercent\t\tPercent')
     for key in sorted(results):
