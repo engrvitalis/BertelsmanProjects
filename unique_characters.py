@@ -6,11 +6,13 @@ def unique_char(string):
     @return: Integer
     """
 
-    return set(string)
+    # Return the length of unique values.
+    return len(set(string))
 
 
 def main():
-    print(unique_char('skskgjrtjjj'))
+    # Request input from user and print the unique value count.
+    print(f'{unique_char(input("Enter a string of characters: "))} unique characters')
 
 
 if __name__ == "__main__":
