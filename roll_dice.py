@@ -12,7 +12,6 @@ def roll_dice():
     # Roll dice.
     dice_1 = random.randrange(1, 7)
     dice_2 = random.randrange(1, 7)
-    print(dice_1, dice_2)
     
     # Return the sum.
     return dice_1 + dice_2
@@ -32,7 +31,7 @@ def main():
         else:
             results[num] = [0, 0, 0]
             results[num][0] += 1
-    print(results)
+
     # Calculate the simulated percentage and insert in results.
     for key, value in results.items():
         results[key][1] = round((value[0] / num_roll) * 100, 2)
