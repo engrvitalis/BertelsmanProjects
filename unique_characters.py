@@ -11,7 +11,8 @@ def unique_char(string):
 
 
 def main():
-    # Request input from user and print out total and unique value.
+    # Request input from user and print out total character count
+    # and unique character count.
     s = input("\nEnter a string of characters: ")
 
     print(f'Total characters: {len(s)}')
