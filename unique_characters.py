@@ -11,8 +11,11 @@ def unique_char(string):
 
 
 def main():
-    # Request input from user and print the unique value count.
-    print(f'{unique_char(input("Enter a string of characters: "))} unique characters')
+    # Request input from user and print out total and unique value.
+    s = input("\nEnter a string of characters: ")
+
+    print(f'Total characters: {len(s)}')
+    print(f'Unique characters count: {unique_char(s)}')
 
 
 if __name__ == "__main__":
