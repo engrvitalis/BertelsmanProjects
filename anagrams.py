@@ -11,4 +11,10 @@ def anagrams(s1, s2):
 
 
 def main():
-    pass
+    s1 = input("Enter first string: ")
+    s2 = input("Enter second string: ")
+
+    if anagrams(s1, s2):
+        print(f'String 1: {s1}\nString 2: {s2}\nare anagrams.')
+    else:
+        print(f'String 1: {s1}\nString 2: {s2}\nare not anagrams.')
