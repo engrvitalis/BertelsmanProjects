@@ -15,6 +15,9 @@ def main():
     s2 = input("Enter second string: ")
 
     if anagrams(s1, s2):
-        print(f'String 1: {s1}\nString 2: {s2}\nare anagrams.')
+        print(f'\nString 1: {s1}\nString 2: {s2}\nare anagrams.')
     else:
         print(f'String 1: {s1}\nString 2: {s2}\nare not anagrams.')
+
+if __name__ == "__main__":
+    main()
