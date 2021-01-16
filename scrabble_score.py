@@ -8,6 +8,7 @@ def scrabble_score(word):
     @return: Integer
     """
 
+    # Return word score.
     return sum([char_score(s) for s in word])
 
 
@@ -20,7 +21,7 @@ def char_score(s):
     @return: Integer
     """
 
-    # Points are mapped to each letter of the alphabet as 
+    # Mapping points to each English alphabet as  
     # per scrabble rules.
     score = {
             "a": 1, "e": 1, "i": 1, "l": 1, "o": 1, 
@@ -31,7 +32,7 @@ def char_score(s):
             "z": 10
             }
 
-    # Character score is returned.
+    # Return character score.
     return score[s]
              
           
