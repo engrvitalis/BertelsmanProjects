@@ -7,17 +7,20 @@ def anagrams(s1, s2):
     @return: Boolean (True or False)
     """
 
-    return sorted(s1.lower()) == sorted(s2.lower())
+    return sorted(s1) == sorted(s2)
 
 
 def main():
-    s1 = input("Enter first string: ")
-    s2 = input("Enter second string: ")
+    # Request user input.
+    s1 = input("\nEnter first string: ").lower()
+    s2 = input("Enter second string: ").lower()
 
+    # Check if the supplied inputs are anagrams and 
+    # display feedback.
     if anagrams(s1, s2):
-        print(f'\nString 1: {s1}\nString 2: {s2}\nare anagrams.')
+        print(f'\n{s1} and {s2} are anagrams.')
     else:
-        print(f'String 1: {s1}\nString 2: {s2}\nare not anagrams.')
+        print(f'\n{s1} and {s2} are not anagrams.')
 
 if __name__ == "__main__":
     main()
