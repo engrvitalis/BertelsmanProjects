@@ -1,8 +1,14 @@
 def scrabble_score(word):
-    pass
+    """
+    This function takes a word and return the full score
+    based on scrabble rules.
+
+    @param: String - word
+    @return: Integer
+    """
 
 
-def char_score():
+def char_score(s):
     pass
 
 
