@@ -20,6 +20,8 @@ def char_score(s):
     @return: Integer
     """
 
+    # Points are mapped to each letter of the alphabet as 
+    # per scrabble rules.
     score = {
             "a": 1, "e": 1, "i": 1, "l": 1, "o": 1, 
             "n": 1, "s": 1, "r": 1, "u": 1, "t": 1, 
@@ -29,12 +31,14 @@ def char_score(s):
             "z": 10
             }
 
+    # Character score is returned.
     return score[s]
              
           
 def main():
     # Request input from user.
     word = input("\nEnter a word: ")
+    # Convert word to lowercase for uniformity.
     word_lower = word.lower()
 
     # Calculate and display word score.
