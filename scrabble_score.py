@@ -9,7 +9,13 @@ def scrabble_score(word):
 
 
 def char_score(s):
-    pass
+    """
+    This function takes a character and returns the score
+    attached to the character based on scrabble rules.
+
+    @param: String - s
+    @return: Integer
+    """
 
 
 def main():
