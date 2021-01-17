@@ -52,7 +52,7 @@ def disp(card):
 
 
 def main():
-    # Dipslay Bingo card.
+    # Create and display Bingo card.
     disp(bingo_card())
 
 
