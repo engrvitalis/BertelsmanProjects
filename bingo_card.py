@@ -34,8 +34,6 @@ def disp(card):
     @return: None
     """
 
-
-def main():
     # Declare variables.
     card = bingo_card()
     i = 0
@@ -43,7 +41,7 @@ def main():
     # Print the card headers.
     for key in card.keys():
         print(key, end='\t')
-    print()
+    print('\n----------------------------------')
 
     # Print the card body.
     for j in range(len(card)):
@@ -51,6 +49,11 @@ def main():
             print(card[key][i], end='\t')
         i += 1
         print()
+
+
+def main():
+    # Dipslay Bingo card.
+    disp(bingo_card())
 
 
 
