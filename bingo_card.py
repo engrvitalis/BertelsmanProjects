@@ -1,2 +1,10 @@
 def bingo_card():
-    pass
+    """
+    This funtion generates and return dictionary as 
+    Bingo card.
+
+    @param: None
+    @return: dictionary - Bingo card.
+    """
+
+    
