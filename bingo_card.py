@@ -25,13 +25,16 @@ def bingo_card():
 
 
 def main():
+    # Declare variables.
     card = bingo_card()
     i = 0
 
+    # Print the card headers.
     for key in card.keys():
         print(key, end='\t')
     print()
 
+    # Print the card body.
     for j in range(len(card)):
         for key in card.keys():
             print(card[key][i], end='\t')
