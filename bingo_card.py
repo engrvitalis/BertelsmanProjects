@@ -24,8 +24,21 @@ def bingo_card():
     return card
 
 
-def disp(card):
-    
+def main():
+    card = bingo_card()
+    i = 0
+
+    for key in card.keys():
+        print(key, end='\t')
+    print()
+
+    for j in range(len(card)):
+        for key in card.keys():
+            print(card[key][i], end='\t')
+        i += 1
+        print()
 
 
-print(bingo_card())
+
+if __name__ == "__main__":
+    main()
