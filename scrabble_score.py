@@ -8,7 +8,8 @@ def scrabble_score(word):
     @return: Integer
     """
 
-    # Return word score.
+    # Generate the points for all the characters in word 
+    # and return the sum.
     return sum([char_score(s) for s in word])
 
 
@@ -32,7 +33,7 @@ def char_score(s):
         "z": 10
         }
 
-    # Return character score.
+    # Lookup score for character and return.
     return score[s]
              
           
