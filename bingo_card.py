@@ -26,7 +26,13 @@ def bingo_card():
 
 
 def disp(card):
-    
+    """
+    This function takes card, a dictionary as argument 
+    and prints it as a bingo card.
+
+    @param: dictionary
+    @return: None
+    """
 
 
 def main():
