@@ -4,7 +4,7 @@ def bingo_card():
     Bingo card.
 
     @param: None
-    @return: dictionary - Bingo card.
+    @return: dictionary.
     """
 
 
@@ -12,7 +12,7 @@ def bingo_card():
 
 
     char = ['B', 'I', 'N', 'G', 'O']
-    card = {}
+    card = dict()
     start = 1
     stop = 15
 
@@ -22,6 +22,10 @@ def bingo_card():
         stop += 15
 
     return card
+
+
+def disp(card):
+    
 
 
 print(bingo_card())
