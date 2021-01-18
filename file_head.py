@@ -18,4 +18,24 @@ def file_head(filename):
             i += 1
 
 
-file_head('elements.txt')
+def main():
+    # Request input from user
+    filename = input("Enter file name: ")
+
+    # Check if file name was not provided by user.
+    if filename == "":
+        # Display error message if file name was not 
+        # provided.
+        print("File name was not provided!")
+    else:
+        try:
+            print()
+            # Display first ten lines on the file.
+            file_head(filename)
+        except:
+            # Display error message for wrong file name.
+            print("Invalid file name!")
+
+
+if __name__ == "__main__":
+    main()
