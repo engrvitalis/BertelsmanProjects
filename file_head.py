@@ -22,10 +22,9 @@ def main():
     # Request input from user
     filename = input("Enter file name: ")
 
-    # Check if file name was not provided by user.
+    # Check if file name was provided by user and 
+    # display error message otherwise.
     if filename == "":
-        # Display error message if file name was not 
-        # provided.
         print("File name was not provided!")
     else:
         try:
