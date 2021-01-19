@@ -1,3 +1,5 @@
+import sys
+
 def file_head(filename):
     """
     This function prints the first ten lines 
@@ -19,21 +21,15 @@ def file_head(filename):
 
 
 def main():
-    # Request input from user
-    filename = input("Enter file name: ")
+    try: 
+        filename = sys.argv[1]
+        file_head(filename) 
 
-    # Check if file name was provided by user and 
-    # display error message otherwise.
-    if filename == "":
-        print("File name was not provided!")
-    else:
-        try:
-            print()
-            # Display first ten lines on the file.
-            file_head(filename)
-        except:
-            # Display error message for wrong file name.
-            print("Invalid file name!")
+    except FileNotFoundError:
+        print("File not found!")
+
+    except IndexError:
+        print("Please, provide a file name!")
 
 
 if __name__ == "__main__":

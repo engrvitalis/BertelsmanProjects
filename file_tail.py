@@ -1,3 +1,5 @@
+import os, sys
+
 def file_tail(filename): 
     """
     This function reads the last 10 lines in a file.
@@ -5,8 +7,6 @@ def file_tail(filename):
     @param: String - filename
     @return: List
     """
-
-    import os
 
     # Initialize variable
     buffer_size = 8192
@@ -36,11 +36,16 @@ def file_tail(filename):
 
 
 def main():
-    try: 
-        file_tail('elements.txt') 
-    except: 
-        print('File not found') 
 
+    try: 
+        filename = sys.argv[1]
+        file_tail(filename) 
+
+    except FileNotFoundError:
+        print("File not found!")
+
+    except IndexError:
+        print("Please, provide a file name!")
 
 if __name__ == '__main__': 
     main()
