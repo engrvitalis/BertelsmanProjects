@@ -24,9 +24,11 @@ def file_tail(filename):
             while True: 
                 count += 1
                   
-                # Updating cursor position.
+                # Updating cursor a distanct of 'buffer_size * count'  from 
+                # the end of file.
                 f_handle.seek(file_size - buffer_size * count) 
-                # Populating the list lines.
+                # Populating the list lines by reading from cursor position
+                # to the end of file.
                 lines.extend(f_handle.readlines()) 
                 # Extract the last 10 lines.
                 if len(lines) >= 10 or f_handle.tell() == 0: 
