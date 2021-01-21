@@ -11,14 +11,21 @@ def sum_num():
     total = 0
 
     while True:
+        print()
         num = input("Enter a number: ")
+        # print()
 
         if num == '':
-            print(total)
+            print(f'Total so far: {total}')
             break
         
-        
-        print(total += float(num))
+        try:
+            total += float(num)
+        except ValueError:
+            print()
+            print("Invalid entry! Enter int or float")
+
+        print(f'Total so far: {total}')
 
 
 def main():
