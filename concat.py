@@ -51,10 +51,11 @@ def main():
         filename = sys.argv[1:]
         bad_files_names = concat(filename) 
     
-    # Print the invalid names.
-    print("List of invalid names provided by user:")
-    for name in bad_files_names:
-        print(name)
+    if len(sys.argv) > 1:
+        # Print the invalid names.
+        print("List of invalid names provided by user:")
+        for name in bad_files_names:
+            print(name)
 
 if __name__ == "__main__":
     main()
