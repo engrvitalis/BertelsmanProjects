@@ -26,10 +26,11 @@ def concat(filename):
             # Add invalid names to bad_files.
             bad_files.append(file)
 
-    # Open a new file and write the contents of ls into it.
-    with open('new_file.txt', 'w') as new_file:
-        for line in ls:
-            new_file.write(line)
+    if len(ls) > 0:
+        # Open a new file and write the contents of ls into it.
+        with open('new_file.txt', 'w') as new_file:
+            for line in ls:
+                new_file.write(line)
 
     # Display the contents of new file.
     with open('new_file.txt', 'r') as f:
