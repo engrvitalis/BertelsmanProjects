@@ -8,3 +8,22 @@ def sum_num():
     @return: Int or Float
     """
 
+    total = 0
+
+    while True:
+        num = input("Enter a number: ")
+
+        if num == '':
+            print(total)
+            break
+        
+        
+        print(total += float(num))
+
+
+def main():
+    sum_num()
+
+
+if __name__ == "__main__":
+    main()
