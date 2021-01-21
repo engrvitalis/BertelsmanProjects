@@ -32,9 +32,9 @@ def concat(filename):
             new_file.write(line)
 
     # Display the contents of new file.
-    with open('new_file.txt') as f:
-        for line in f:
-            print(line.rstrip())
+    with open('new_file.txt', 'r') as f:
+        for l in f:
+            print(l.rstrip())
     
     # Return invalid names as list, bad_files.
     return bad_files
