@@ -9,10 +9,15 @@ def concat(filename):
     @return: None
     """
     ls = list()
+    bad_files = list()
+
     
-    for file in sys.argv: 
-        with open(file) as f:
-            ls.extend(f.readlines())
+    for file in filename: 
+        try:
+            with open(file) as f:
+                ls.extend(f.readlines())
+        except FileNotFoundError:
+            bad_files.append(file)
         ls.append('\n')
 
     with open('new_file.txt', 'w') as new_file:
@@ -22,20 +27,20 @@ def concat(filename):
     with open('new_file.txt') as f:
         for line in f:
             print(line.rstrip())
+    
+    return bad_files
 
 
 def main():
-    try: 
-        filename = sys.argv[1]
-        concat(filename) 
-
-    except FileNotFoundError:
-        print("File not found!")
-
-    except IndexError:
+    if len(sys.argv) < 2:
         print("Please, provide a file name!")
-
-
+    else:
+        filename = sys.argv[1:]
+        bad_files_names = concat(filename) 
+    
+    print("List of invalid names provided by user:")
+    for name in bad_files_names:
+        print(name)
 
 if __name__ == "__main__":
     main()
