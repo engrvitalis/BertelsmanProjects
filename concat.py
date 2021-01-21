@@ -21,11 +21,10 @@ def concat(filename):
             # Convert the contents of file to list and append to ls.
             with open(file) as f:
                 ls.extend(f.readlines())
+                ls.append('\n')
         except FileNotFoundError:
             # Add invalid names to bad_files.
             bad_files.append(file)
-
-        ls.append('\n')
 
     # Open a new file and write the contents of ls into it.
     with open('new_file.txt', 'w') as new_file:
@@ -51,10 +50,10 @@ def main():
         filename = sys.argv[1:]
         bad_files_names = concat(filename) 
     
+    print()
     if len(sys.argv) > 1:
         i = 1
         # Print the invalid names.
-        print()
         print("Invalid Entries:")
         for name in bad_files_names:
             print(f'{i}: {name}')
