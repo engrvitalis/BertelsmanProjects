@@ -1,5 +1,11 @@
 def remove_comments(file):
-    pass
+    """
+    This function accepts a source file and creates a copy of the
+    file with the comments removed.
+
+    @param: String - file name
+    @return: None
+    """
 
 
 def main():
