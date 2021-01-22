@@ -7,31 +7,33 @@ def remove_comments(old_file, new_file):
             String - new_file: name of new file to create.
     @return: None
     """
-
-    # Declare variable.
-    
-
+    # Open old_file in read mode.
     with open(old_file, 'r') as old_fh:
-        for line in old_fh:
-            # Checking for # on a line.
-            if '#' in line:
-                # print(line, end='')
-                # Checking if # is inside a string.
-                for char in ["'", '"']:
-                    if char not in line[:line.index('#')] and char not in line[line.index('#')+1:]:
-                        # Ignoring # that are inside a string.
-                        # print(line, end='')
-                        continue
-                    else:
-                        # Getting # inside a string.
-                        print(line, end='')
-            else:
-                # Getting all lines without # in them.
-                print(line, end='')
+        # Open new_file in write mode.
+        with open(new_file, 'w') as new_fh:
+            # Go through the content of old_file line by line.
+            for line in old_fh:
+                # Checking for '#' on a line.
+                if '#' in line:
+                    # Checking lines for '#' is inside a string.
+                    for char in ["'", '"']:
+                        if char not in line[:line.index('#')] and char not in line[line.index('#')+1:]:
+                            # Ignoring '#' that are not inside a string.
+                            continue
+                        else:
+                            # Writing lines with # inside a string to new_file.
+                            new_fh.write(line)
+                else:
+                    # Writing all lines without # in them to new_file.
+                    new_fh.write(line)
 
 
 def main():
-    print(remove_comments('elements2.txt', 'elements2_copy.txt'))
+    # Request input from users.
+    # old_file = input("Enter the name of file to be processed: ")
+    # new_file = input("Enter the name of new file to be created: ")
+
+    remove_comments('elements2.txt', 'elements2_copy.txt')
 
 
 if __name__ == "__main__":
