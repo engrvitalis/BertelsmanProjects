@@ -18,8 +18,7 @@ def password(file):
     print("Loading ...")
 
  
-    # Open the_industrial_republic.txt file and move words that met
-    # desired specification into ls.
+    # Open text file and move words that met desired specification into ls.
     with open(file, 'r') as f:
         print('...\n...')
         for line in f:
@@ -29,15 +28,21 @@ def password(file):
     print('...')
     print("Program loaded successfully!\n")
     
-
+    # Initialize options variable
     option = ""
+
     while True:
+        # Quit if the user enters 'q'.
         if option.lower() == 'q':
             break
+        # If return is hit instead, generate the password.
         elif option == "":
             while True:
-                word1 = random.choice(ls)
+                # Generate 2 random words from word list.
+                word1 = random.choice(ls)   
                 word2 = random.choice(ls)
+                # if the numbers are the same or their lengths combined
+                # is not between 8 and 10, continue, else concatenate.
                 if word1 == word2 or not 8 <= len(word1 + word2) <= 10:
                     continue
                 else:
