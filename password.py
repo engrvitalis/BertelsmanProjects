@@ -12,7 +12,7 @@ def password(file):
 
     # Declare variable.
     word_list = list()
-    used_passwords = list()
+    used_passwords = set()
     option = ""
 
     with open(file, 'r') as f:
@@ -48,7 +48,7 @@ def password(file):
                     if pas.lower() in used_passwords:
                         continue
                     else:
-                        used_passwords.append(pas.lower())
+                        used_passwords.add(pas.lower())
                         print(f'Password: {pas}')
                         print()
                         break
