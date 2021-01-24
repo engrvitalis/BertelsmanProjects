@@ -12,7 +12,6 @@ def password(file):
 
     # Declare variable.
     word_list = list()
-    used_passwords = set()
     option = ""
 
     with open(file, 'r') as f:
@@ -44,14 +43,9 @@ def password(file):
                     continue
                 else:
                     pas = word1.capitalize() + word2.capitalize()
-                    # Making sure there is no password duplicates per session.
-                    if pas.lower() in used_passwords:
-                        continue
-                    else:
-                        used_passwords.add(pas.lower())
-                        print(f'Password: {pas}')
-                        print()
-                        break
+                    print(f'Password: {pas}')
+                    print()
+                    break
 
         option = input("Hit return to generate a new password or enter 'q' to end: ")
 
