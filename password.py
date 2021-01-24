@@ -1,8 +1,7 @@
 def password(file):
     """
     This function will generate and print two 2 worded password.
-    Please note that a word file name must be assigned to variable called file
-    in the main function before the program is run.
+    The user will provide the word text file to be read by the function.
 
     @param: None
     @return: None
