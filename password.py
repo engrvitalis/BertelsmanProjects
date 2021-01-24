@@ -13,25 +13,20 @@ def password(file):
     # Declare variable.
     word_list = list()
     used_passwords = list()
+    option = ""
 
-    
-
- 
-    # Open text file and move words that met desired specification into ls.
     with open(file, 'r') as f:
-        # Give user loading commencement feedback.
+        # Give user loading status feedback.
         print("Loading ...")
         print('...\n...')
 
+        # Move words with length up to 3 into ls.
         for line in f:
             for word in line.split():
                 if len(word) >= 3 and word.isalpha():
                     word_list.append(word)
     print('...')
     print("Program loaded successfully!\n")
-    
-    # Initialize options variable
-    option = ""
 
     while True:
         # Quit if the user enters 'q'.
