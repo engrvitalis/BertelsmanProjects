@@ -39,7 +39,7 @@ def word_proportion(file):
     # Sort dic with values in ascending order.
     ls = list(sorted(dic.items(), key=lambda kv:(kv[1], kv[0])))
 
-    # Creating a list of tuples containing characters with smallest word count.
+    # Creating a list of tuples containing character(s) with smallest word count.
     min_val = [t for t in ls if t[1] == ls[0][1]]
 
     # Return a list containing ls, min_val and total_words.
@@ -47,21 +47,24 @@ def word_proportion(file):
 
 
 def main():
-    file = "gatsby.txt"
+    try:
+        # Request user input.
+        file = input("Enter file name: ")
 
-    ls = word_proportion(file)
-
-    # print(f'{char_occurence(file)}')
-    
-    print(f'\nCharacter\tWord Count\tRatio')
-    for tup in ls[0]:
-        print(f"{tup[0]}\t\t{tup[1]}\t\t{round(tup[1]/ls[2], 4)}")
-
-    # Display the characters with the smallest occurrence.
-    print('\nThe character(s) with the smallest word occurrence are: ')
-    print(', '.join([tup[0] for tup in ls[1]]))
+        # Count words that contain each character.
+        ls = word_proportion(file)
         
+        # Display the table containing characters, word count and ratios.
+        print("The table below contains characters, the number of words they appeared in and the ratio: ")
+        print(f'\nCharacter\tWord Count\tRatio')
+        for tup in ls[0]:
+            print(f"{tup[0]}\t\t{tup[1]}\t\t{round(tup[1]/ls[2], 4)}")
 
-
+        # Display the characters with the smallest occurrence.
+        print('\nThe character(s) with the smallest word occurrence are: ')
+        print(', '.join([tup[0] for tup in ls[1]]))
+    except:
+        print('Please, enter a valid input!')
+        
 if __name__ == '__main__':
     main()
