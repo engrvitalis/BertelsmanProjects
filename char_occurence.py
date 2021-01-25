@@ -21,17 +21,19 @@ def char_occurence(file):
                 for char in set(word):
                     if char.isalpha():
                         dic[char.lower()] = dic.get(char, 0) + 1
-    print(dic)
+    return dic
 
 
 def main():
     try:
         file = input("Enter file name: ")
         print(f'File processing is complete!')
-        print(f'{len(char_occurence(file)} characters found in {file}')
+        # print(f'{len(char_occurence(file))} characters found in {file}')
         print('The word count for each character is as follows:')
-        print(f'Character\t')
-        char_occurence(file)
+        print()
+        print(f'Character\tWord Count')
+        for key, value in char_occurence(file).items():
+            print(f'{key}\t\t{value} ')
     except:
         print("Invalid file name!")
 
