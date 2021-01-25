@@ -27,8 +27,8 @@ def char_occurence(file):
 def main():
     try:
         file = input("Enter file name: ")
-        print(f'File processing is complete!')
-        # print(f'{len(char_occurence(file))} characters found in {file}')
+        print()
+        print(f'{len(char_occurence(file))} characters found in {file}')
         print('The word count for each character is as follows:')
         print()
         print(f'Character\tWord Count')
