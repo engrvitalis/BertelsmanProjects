@@ -8,7 +8,7 @@ def char_occurence(file):
     the number of words they are contained in.
     """
 
-    # Define variables.
+    # Define variable.
     dic = dict()
 
     # Open file and start checking for character occurrence.
@@ -41,13 +41,13 @@ def main():
 
     # print(f'{char_occurence(file)}')
     
-    print(f'Character\tWord Count\tRatio')
+    print(f'\nCharacter\tWord Count\tRatio')
     for tup in ls[0]:
         print(f"{tup[0]}\t\t{tup[1]}\t\t{round(tup[1]/ls[2], 4)}")
 
     # Display the characters with the smallest occurrence.
-    for tup in ls[1]:
-        print(tup[0], end=", ")
+    print('\nThe character(s) with the smallest word occurrence are: ')
+    print(', '.join([tup[0] for tup in ls[1]]))
         
 
 
