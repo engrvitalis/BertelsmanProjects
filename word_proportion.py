@@ -1,4 +1,4 @@
-def char_occurence(file):
+def word_proportion(file):
     """
     This program will take a file input and count the 
     number of words that contains each character.
@@ -37,7 +37,7 @@ def char_occurence(file):
 def main():
     file = "gatsby.txt"
 
-    ls = char_occurence(file)
+    ls = word_proportion(file)
 
     # print(f'{char_occurence(file)}')
     
