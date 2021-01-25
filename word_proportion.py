@@ -6,7 +6,7 @@ def word_proportion(file):
 
     @param: String - file name
     @return: List - [ls, min_val, total_words]
-    
+
             ls - List of tuples(Key value pair of characters and word count)
                 - [(char1, count1), (char2, count2), ...]
 
@@ -19,14 +19,18 @@ def word_proportion(file):
     # Define variable.
     dic = dict()
 
-    # Open file and start checking for character occurrence.
+    # Open file and start checking for character in words.
     with open(file) as f:
+        # Parse each line in the file.
         for line in f:
-            # print(line)
+            # Parse each word in line.
             for word in line.split():
-                # ls.append(word)
+                # Parse each character in word while avoiding duplicate.
+                # Count word once even if character occurred twice in word. 
                 for char in set(word):
+                    # Check if character is an alphabet.
                     if char.isalpha():
+                        # Increment word count for character.
                         dic[char.lower()] = dic.get(char, 0) + 1
 
     # Get the total number of words.
