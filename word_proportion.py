@@ -1,11 +1,19 @@
 def word_proportion(file):
     """
     This program will take a file input and count the 
-    number of words that contains each character.
+    number of words that a character appeared in, then assign the word count
+    to the character in a dictionary, sort by values and return list of tuples.
 
     @param: String - file name
-    @return: Dictionary - with keys as character and value as 
-    the number of words they are contained in.
+    @return: List - [ls, min_val, total_words]
+    
+            ls - List of tuples(Key value pair of characters and word count)
+                - [(char1, count1), (char2, count2), ...]
+
+            min_vale(Characters with least word count) 
+                - List of tuples - [(char1, count1), (char2, count2), ...]
+
+            total_words(Total number of words) - Int
     """
 
     # Define variable.
