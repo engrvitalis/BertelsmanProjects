@@ -10,7 +10,6 @@ def char_occurence(file):
 
     # Define variables.
     dic = dict()
-    ls = list()
 
     # Open file and start checking for character occurrence.
     with open(file) as f:
@@ -21,21 +20,35 @@ def char_occurence(file):
                 for char in set(word):
                     if char.isalpha():
                         dic[char.lower()] = dic.get(char, 0) + 1
-    return dic
+
+    # Get the total number of words.
+    total_words = sum([val for val in dic.values()])
+
+    # Sort dic with values in ascending order.
+    ls = list(sorted(dic.items(), key=lambda kv:(kv[1], kv[0])))
+
+    # Creating a list of tuples containing characters with smallest word count.
+    min_val = [t for t in ls if t[1] == ls[0][1]]
+
+    # Return a list containing ls, min_val and total_words.
+    return [ls, min_val, total_words]
 
 
 def main():
-    try:
-        file = input("Enter file name: ")
-        print()
-        print(f'{len(char_occurence(file))} characters found in {file}')
-        print('The word count for each character is as follows:')
-        print()
-        print(f'Character\tWord Count')
-        for key, value in char_occurence(file).items():
-            print(f'{key}\t\t{value} ')
-    except:
-        print("Invalid file name!")
+    file = "gatsby.txt"
+
+    ls = char_occurence(file)
+
+    # print(f'{char_occurence(file)}')
+    
+    print(f'Character\tWord Count\tRatio')
+    for tup in ls[0]:
+        print(f"{tup[0]}\t\t{tup[1]}\t\t{round(tup[1]/ls[2], 4)}")
+
+    # Display the characters with the smallest occurrence.
+    for tup in ls[1]:
+        print(tup[0], end=", ")
+        
 
 
 if __name__ == '__main__':
