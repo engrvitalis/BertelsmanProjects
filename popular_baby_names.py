@@ -62,8 +62,8 @@ def main():
 
     # Display name list
     print('\nThe most popular baby names:')
-    print(f'Boys: {boys}')
-    print(f'Girls: {girl}')
+    print(f'Boys: {", ".join(boys)}.')
+    print(f'Girls: {", ".join(girl)}.')
 
 
 if __name__ == '__main__':
