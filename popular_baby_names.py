@@ -57,8 +57,12 @@ def main():
     # Get file path from directory.
     files = [os.path.join('BabyNames', file) for file in os.listdir('BabyNames')]
 
-    # Extract popular names from files.
-    boys, girl = popular_names(files)
+    try:
+        # Extract popular names from files.
+        boys, girl = popular_names(files)
+    except:
+        print("Invalid file name!")
+        quit()
 
     # Display name list
     print('\nThe most popular baby names:')
