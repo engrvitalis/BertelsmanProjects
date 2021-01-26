@@ -10,3 +10,7 @@ def popular_names(ls):
     """
 
     pass
+
+
+def main():
+    pass
