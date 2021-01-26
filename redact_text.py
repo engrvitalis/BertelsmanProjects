@@ -5,7 +5,7 @@ def redact_text(file, new_file, sensitive_file):
     sensitive information to remove.
     It will read the file provided, shield the sensitive words in the file, create
     a new file with the name provided, and write the processed content of the 
-    the original file in it.
+    the original file to it.
 
     @param: file - original file name
             new_file - name of file to return
