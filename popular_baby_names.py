@@ -27,32 +27,43 @@ def popular_names(files):
         with open(file, 'r') as f_handle:
             # Go through each line
             if 'Boys' in file:
-                for line in f_handle:
-                    line = line.split()
-                    if num is None or num < int(line[1]):
-                        name, num = line[0], int(line[1])
-
-                if name not in popular_boys_names:
-                    popular_boys_names.append(name)
-                name, num = None, None
+                extract_names(name, num, popular_boys_names, f_handle)
             else:
-                for line in f_handle:
-                    line = line.split()
-                    if num is None or num < int(line[1]):
-                        name, num = line[0], int(line[1])
+                extract_names(name, num, popular_girls_names, f_handle)
 
-                if name not in popular_girls_names:
-                    popular_girls_names.append(name)
-                name, num = None, None
+    return tuple([popular_boys_names, popular_girls_names])
 
-    print(popular_boys_names)
-    print(popular_girls_names)
+    # print(popular_boys_names)
+    # print(popular_girls_names)
+# 
+
+
+def extract_names(name, num, ls, f_handle):
+
+    # Go through each line in the file.
+    for line in f_handle:
+        line = line.split()
+        # Update baby name if the number use is the number of use 
+        # is higher than previous value.
+        if num is None or num < int(line[1]):
+            name, num = line[0], int(line[1])
+
+    # Update ls with new popular name
+    if name not in ls:
+        ls.append(name)
 
 
 def main():
-    # files = os.listdir('BabyNames')
+    # Get file path from directory.
     files = [os.path.join('BabyNames', file) for file in os.listdir('BabyNames')]
-    popular_names(files)
+
+    # Extract popular names from files.
+    boys, girl = popular_names(files)
+
+    # Display name list
+    print('\nThe most popular baby names:')
+    print(f'Boys: {boys}')
+    print(f'Girls: {girl}')
 
 
 if __name__ == '__main__':
