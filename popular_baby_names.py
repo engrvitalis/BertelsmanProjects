@@ -1,7 +1,7 @@
 import os
 
 
-def popular_names(ls):
+def popular_names(files):
     """
     This program will read all file in BabyNames directory, identify names 
     that are popular for at least one year and return two lists containing most 
@@ -12,22 +12,26 @@ def popular_names(ls):
     @return: Tuple - containing 2 lists, most popular names for boys and girls
         respectively.
     """
+    pass
 
+
+def separate_files(files):
     # Separate male from female names.
-    boys_files = [name for name in ls if 'Boys' in name]
-    girls_files = [name for name in ls if 'Girls' in name]
+    boys_files = [name for name in files if 'Boys' in name]
+    girls_files = [name for name in files if 'Girls' in name]
     # print(boys_files)
     # print(girls_files)
-
-    # for file in 
+    return tuple([boys_files, girls_files])
+    
 
 
 
 
 def main():
-    ls = os.listdir('BabyNames')
+    files = os.listdir('BabyNames')
     # print(ls)
-    popular_names(ls)
+    popular_names(files)
+    print(separate_files(files))
 
 
 if __name__ == '__main__':
