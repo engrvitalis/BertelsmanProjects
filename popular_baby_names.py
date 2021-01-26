@@ -1,3 +1,6 @@
+import os
+
+
 def popular_names(ls):
     """
     This program will read all file in BabyNames directory, identify names 
@@ -13,7 +16,9 @@ def popular_names(ls):
 
 
 def main():
-    pass
+    ls = os.listdir('BabyNames')
+    print(ls)
+    popular_names(ls)
 
 
 if __name__ == '__main__':
