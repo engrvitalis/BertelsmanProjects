@@ -22,9 +22,9 @@ def redact_text(file, new_file, sensitive_file):
         for line in f:
             # Split line by words and add into sensitive_list.
             for word in line.split():
-                # Strip word of any special character to the right of it.
-                word = get_word(word)
 
+                # Strip word of any special character and add to sensititve_list.
+                word = get_word(word)
                 if word != "":
                     sensitive_list.append(word.lower().strip())
 
