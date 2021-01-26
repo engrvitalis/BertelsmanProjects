@@ -5,8 +5,8 @@ def popular_names(files):
     """
     This program will read all file in BabyNames directory, identify names 
     that are popular for at least one year and return two lists containing most 
-    popular names for boys and girls respectively and each of the list cannot contain
-    repeated values.
+    popular names for boys and girls respectively. Each of the list cannot contain
+    duplicate values.
 
     @param: List - Names of files.
     @return: Tuple - containing 2 lists, most popular names for boys and girls
