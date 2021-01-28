@@ -23,7 +23,7 @@ def main():
         # Recursively sum numbers and display the total.
         print(f'\nTotal: {recurse_sum()}')
     except:
-        print("\nInvalid Input! You must enter a float or an int: ")
+        print("\nLast input was invalid! All values must be float or int: ")
 
 if __name__ == '__main__':
     main()
