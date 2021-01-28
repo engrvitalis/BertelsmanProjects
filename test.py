@@ -1,8 +1,8 @@
 import re
 
-O_FILE = input('Enter original text file name: ')
-W_FILE = input('Enter sensitive words file name: ')
-R_FILE = input('Enter redacted file name: ')
+O_FILE = 'words2.txt' # input('Enter original text file name: ')
+W_FILE = 'sensitive_words.txt' #input('Enter sensitive words file name: ')
+R_FILE = 'me.txt' # input('Enter redacted file name: ')
 
 print(O_FILE)
 #open original file
