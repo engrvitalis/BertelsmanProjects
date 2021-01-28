@@ -1,3 +1,4 @@
 Statistics, course mean,
 variance, regression
 name from Ihembosi
+daddy

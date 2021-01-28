@@ -36,7 +36,7 @@ def redact_text(file, new_file, sensitive_file):
             # Parse the line, shielding sensitive words and write to new file.
             for line in in_file:
                 for word in sensitive_list:
-                    line = line.replace(word.lower(), '*' * len(word))
+                    line = line.lower().replace(word.lower(), '*' * len(word))
                 out_file.write(line)
 
 
