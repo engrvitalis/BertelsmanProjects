@@ -8,3 +8,5 @@ def recurse_palindrome(word):
     @return: Boolean
     """
 
+def main():
+    pass
