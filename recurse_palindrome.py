@@ -9,7 +9,7 @@ def recurse_palindrome(word):
     """
 
     # Empty string or a single character is a palindrome.
-    if len(word) < 2:
+    if len(word) < 1:
         return True
     # Checking if the first and last characters are not the same.
     elif word[0] != word[-1]:
