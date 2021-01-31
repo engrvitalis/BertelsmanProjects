@@ -29,7 +29,7 @@ def main():
     s = input("Enter the first string: ")
     t = input("Enter the second string: ")
 
-    try:
-        print("The edit distance between {s} and {t} is {edit_distance(s, t)}")
-    except Exception as e:
-        print(e)
+    print(f"The edit distance between {s} and {t} is {edit_distance(s, t)}")
+
+if __name__ == '__main__':
+    main()
