@@ -16,6 +16,7 @@ def edit_distance(s, t):
         return len(s)
     else:
         cost = 0
+        
         # Check the equality of the last characters of s and t.
         if s[-1] != t[-1]:
             cost = 1
