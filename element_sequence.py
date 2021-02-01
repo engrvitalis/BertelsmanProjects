@@ -1,8 +1,13 @@
 def element_sequence(name, file):
     with open(file) as f:
         for line in f:
-            print(line.lower().split(',')[-1], end='')
+            word = line.lower().split(',')
+            if word[-1][0] == name.lower()[-1]:
+                return name + word
 
+
+def get_names(file):
+    
 
 def main():
     name = "Hydrogen"
