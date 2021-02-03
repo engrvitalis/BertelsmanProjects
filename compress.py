@@ -4,7 +4,7 @@ def compress(data):
     recursively compress them using run-length algorithm and 
     return a compressed list.
 
-    @param: List or String
+    @param: All types
     @return: List
     '''
 
