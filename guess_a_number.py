@@ -14,19 +14,21 @@ def guess_a_number():
     import random
 
     # Generate a secret number.
-    secret_number = random.randint(0, 101)
+    secret_number = random.randint(0, 100)
 
     print(f'\nI have chosen a number. Can you guess what it is?')
     while True:
         # Request guess from user and provide feedback.
-        num = int(input("Enter your guess here: "))
-        if num < secret_number:
-            print('Too low!')
-        elif num > secret_number:
-            print('Too high!')
-        else:
-            print('Just right!')
-            break
+        num = input("Enter your guess here: ")
+        if num != "":
+            num = int(num)
+            if num < secret_number:
+                print('Too low!')
+            elif num > secret_number:
+                print('Too high!')
+            else:
+                print('Just right!')
+                break
 
 
 def main():
