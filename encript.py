@@ -2,4 +2,7 @@ def encript(data):
     pass
 
 
-def 
+def main():
+    pass
+
+
