@@ -10,7 +10,7 @@ def get_names(file):
 
     with open(file, 'r') as f:
         for line in f:
-            
+            # 
             names.append(line.lower().split(',')[-1].strip())
     
     return names
