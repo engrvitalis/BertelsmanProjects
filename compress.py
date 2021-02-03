@@ -13,15 +13,17 @@ def compress(data):
 
     # Go through the characters.
     for i in range(len(data)):
-        # Check if character is different from previous ones.
+        # Check if character is different from the first one
+        # on the list.
         if data[i] != data[0]:
-            # Add character with its count into ls
+            # Add the first character on the list with its 
+            # number of occurrence to ls.
             ls.extend([data[0], i])
-            # Slice counted character from data and recursively process
-            # the new data, add it to ls and return it.
+            # Remove counted character from data and recursively call 
+            # function with the new data.
             return ls + compress(data[i:])
 
-    # Return the last similar character(s) in data.
+    # Count and add the last similar character in data into ls.
     ls.extend([data[0], len(data)])
 
     return ls
