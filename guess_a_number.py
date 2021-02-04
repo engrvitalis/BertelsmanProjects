@@ -21,7 +21,12 @@ def guess_a_number():
         # Request guess from user and provide feedback.
         num = input("Enter your guess here: ")
         if num != "":
-            num = int(num)
+            try:
+                num = int(num)
+            except:
+                print("Invalid input. Please provide an integer!\n")
+                continue
+
             if num < secret_number:
                 print('Too low!')
             elif num > secret_number:
