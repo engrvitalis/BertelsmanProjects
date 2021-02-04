@@ -13,10 +13,13 @@ def guess_a_number():
 
     import random
 
+    # Initialize counter
+    count = 1
+
     # Generate a secret number.
     secret_number = random.randint(0, 100)
 
-    print(f'\nI have chosen a number. Can you guess what it is?')
+    print(f'\nI have chosen a number between 1 and 100. Can you guess what it is?')
     while True:
         # Request guess from user and provide feedback.
         num = input("Enter your guess here: ")
@@ -28,12 +31,15 @@ def guess_a_number():
                 continue
 
             if num < secret_number:
-                print('Too low!')
+                print('Too low!\n')
             elif num > secret_number:
-                print('Too high!')
+                print('Too high!\n')
             else:
                 print('Just right!')
+                print(f'You did it in {count} guesses!')
                 break
+
+            count += 1
 
 
 def main():
