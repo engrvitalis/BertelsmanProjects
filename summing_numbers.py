@@ -7,4 +7,11 @@ def my_sum(*args):
     @return: Int, float.
     """
 
-    
+    # Initialize result variable.
+    result = 0
+    # Add the next available number to result.
+    for x in args:
+        result += x
+    return result
+
+
