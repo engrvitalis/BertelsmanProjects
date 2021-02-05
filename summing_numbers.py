@@ -18,7 +18,7 @@ def my_sum(*args):
 def main():
     # Get the sum of variables a, b, c and display the an output.
     a, b, c, d = [2, 4], 5, (4, 5.1), 6.0
-    print(f'\n{a} + {b} + {c} + {d} = {my_sum(*a, b, *c, d)}')
+    print(f'\n{a} + {b} + {c} + {d} = {my_sum(*a, b, *c, d)}\n')
 
 
 if __name__ == '__main__':
