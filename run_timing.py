@@ -30,3 +30,15 @@ def run_timer():
     return total, count
     
 
+def main():
+    # Start timer
+    total, count = run_timer()
+    # Catch error generated when the ended the program without any input.
+    try:
+        print(f'\nAverage of {round(total/count, 1)}, over {count} runs')
+    except ZeroDivisionError:
+        quit()
+
+
+if __name__ == '__main__':
+    main()
