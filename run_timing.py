@@ -23,7 +23,7 @@ def run_timer():
             try:
                 total += float(one_run) # Update total.
             except ValueError:
-                print("Invalid Entry. It must be int or float or blank line to terminate!")
+                print("\nInvalid Entry. It must be int or float or blank line to terminate!\n")
                 continue
             count += 1  # Update entry count.
     
