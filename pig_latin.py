@@ -16,8 +16,10 @@ def pig_latin(word):
 
 
 def main():
+    # Request input from user.
     print("\nThis program translates English words to pig latin.")
     word = input("Enter an English word: ")
+    # Check for invalid input before translation.
     try:
         print(f"The pig latin version of '{word}' is '{pig_latin(word.lower())}'")
     except ValueError:
