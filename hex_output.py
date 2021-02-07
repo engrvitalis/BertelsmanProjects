@@ -17,11 +17,12 @@ def hex_output(hex_num):
     """
     # Iterate over each character of the reversed hex_num string,
     # convert to decimal and sum all.
-    return sum([int(str(j), base=16) * 16**i for i, j in enumerate(reversed(hex_num))])
+    return sum([int(j, base=16) * 16**i for i, j in enumerate(reversed(hex_num))])
 
 
 def main():
     # Request hexadecimal number from user and return decimal equivalent.
+    
     print("\nConvert hexadecimal number to decimal.")
     # Continuously request input from user, process it and exit if blank 
     # line is entered.
