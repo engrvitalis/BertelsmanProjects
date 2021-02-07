@@ -21,8 +21,20 @@ def hex_output(hex_num):
 
 
 def main():
-    print(hex_output('80e1'))
+    # Request hexadecimal number from user and return decimal equivalent.
+    print("\nConvert hexadecimal number to decimal.")
+    # Continuously request input from user, process it and exit if blank 
+    # line is entered.
+    while True:
+        num = input("Enter a hexadecimal number: ")
+        if not num:
+            break
 
+        # Trap invalid entries.
+        try:
+            print(f"Decimal equivalent of '{num}' is {hex_output(num)}\n")
+        except ValueError:
+            print("Invalid number!\n")
 
 if __name__ == '__main__':
     main()
