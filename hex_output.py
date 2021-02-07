@@ -26,7 +26,7 @@ def main():
     # Continuously request input from user, process it and exit if blank 
     # line is entered.
     while True:
-        num = input("Enter a hexadecimal number: ")
+        num = input("Enter a hexadecimal number or blank line to exit: ")
         if not num:
             break
 
