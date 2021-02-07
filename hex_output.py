@@ -4,3 +4,7 @@ def hex_output(hex_num):
 
 def main():
     pass
+
+
+if __name__ == '__main__':
+    main()
