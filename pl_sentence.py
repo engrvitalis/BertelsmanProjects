@@ -7,6 +7,8 @@ def pl_sentence(sentence):
     @return: String
     """
 
+    # Break sentence into words, convert each word to Pig latin and 
+    # join them back using spaces.
     return ' '.join([pig_latin(word) for word in sentence.split()])
 
 
@@ -14,7 +16,7 @@ def pl_sentence(sentence):
 def pig_latin(word):
     """
     This function takes an English word as input and returns a pig latin version of 
-    of the it.
+    of the it while keeping track of the capitalized words.
 
     @param: str
     @return: str
@@ -25,16 +27,16 @@ def pig_latin(word):
 
     word = word.lower()
 
-    # Translate words starting with vowel.
+    # Translate words starting with vowel while keeping 
+    # track of capitalized words.
     if word[0] in 'aeiou':
-
-        # Translate words starting with consonants.
         if capitalized:
             return word.capitalize() + 'way'
         else:
             return word + 'way'
 
-    # Translate words starting with consonants.
+    # Translate words starting with consonants while keeping 
+    # track of capitalized words.
     if capitalized:
         return word[1:].capitalize() + word[0] + 'ay'
     else:
@@ -44,10 +46,10 @@ def pig_latin(word):
 def main():
     # Request input from user.
     print("\nThis program translates English sentence to Pig Latin sentence.")
-    sentence = 'This is the town of Eggs' #input("Enter an English sentence: ")
+    sentence = input("Enter an English sentence: ")
     # Translate only if input is valid, else display error message.
     try:
-        print(f'Original sentence: {sentence}')
+        print(f'\nOriginal sentence: {sentence}')
         print(f'Pig latin sentence: {pl_sentence(sentence)}\n')
     except ValueError:
         print("Invalid entry!")
