@@ -11,7 +11,7 @@ def pig_latin(word):
     if word[0] in 'aeiou':
         return word + 'way'
 
-    # Translate words starting with non-vowel character.
+    # Translate words starting with consonants.
     return word[1:] + word[0] + 'ay'
 
 
