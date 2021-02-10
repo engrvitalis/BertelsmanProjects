@@ -11,7 +11,8 @@ def ubi_dubbi(word):
 
 
 def main():
-    word = 'aProgram'
+    print("Translate a word to Ubi Dubbi!")
+    word = input("Enter a word: ")
     print(ubi_dubbi(word))
 
 
