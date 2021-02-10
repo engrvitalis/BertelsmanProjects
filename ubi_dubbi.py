@@ -7,11 +7,11 @@ def ubi_dubbi(word):
     @return: str
     """
 
-    return [char for char in word]
+    return ''.join(['ub'+char if char in 'aeiou' else char for char in word.lower()])
 
 
 def main():
-    word = 'Program'
+    word = 'aProgram'
     print(ubi_dubbi(word))
 
 
