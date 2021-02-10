@@ -1,5 +1,13 @@
 def ubi_dubbi(word):
-    pass
+    """
+    This function takes a string (word) as argument and 
+    returns Ubi Dubbi translation of the word.
+
+    @param: str - word
+    @return: str
+    """
+
+    
 
 
 def main():
