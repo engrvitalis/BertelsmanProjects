@@ -7,7 +7,7 @@ def ubi_dubbi(word):
     @return: str
     """
 
-    return word
+    return [char for char in word]
 
 
 def main():
