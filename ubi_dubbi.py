@@ -7,11 +7,12 @@ def ubi_dubbi(word):
     @return: str
     """
 
-    
+    return word
 
 
 def main():
-    ubi_dubbi(word)
+    word = 'Program'
+    print(ubi_dubbi(word))
 
 
 if __name__ == '__main__':
