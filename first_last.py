@@ -1,9 +1,10 @@
 def first_last(inp):
     """
-    This function retrieves the first and last elements in 
-    inp, join and return them of type inp.
+    This function retrieves the first and last elements of 
+    inp which is either a sequence of string, list or tuple,
+    join them and return them as same type with inp.
 
-    @param: inp - str, list and tuple
+    @param: inp - str, list or tuple
     @return: same type as inp
     """
 
@@ -20,8 +21,10 @@ def first_last(inp):
         return 'Object is not subscriptable!'
 
 # Call and test function.
+print()
 print(first_last([2,4, 5, 6]))
 print(first_last((2,4, 5, 6)))
 print(first_last('string'))
 print(first_last({2,4,6}))
 print(first_last({'a':3, 'b':4}))
+print()
