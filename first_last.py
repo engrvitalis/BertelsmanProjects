@@ -11,14 +11,13 @@ def first_last(inp):
     # Check inp type, concatenate its first and last elements
     # and return as same type as inp.
     # Display error message if type is not subscriptable.
-    if type(inp) == str:
-        return inp[0] + inp[-1]
-    elif type(inp) == list:
-        return [inp[0], inp[-1]]
-    elif type(inp) == tuple:
-        return (inp[0], inp[-1])
-    else:
-        return 'Object is not subscriptable!'
+    # x = 
+    try:
+        return inp[:1] + inp[-1:]
+    except TypeError:
+        print(f"Object: {inp} of {type(inp)} is not subscriptable!\n")
+        quit()
+
 
 # Call and test the function.
 print()
