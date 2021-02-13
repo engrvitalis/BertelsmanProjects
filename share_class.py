@@ -15,13 +15,17 @@ def get_instructors(names):
     @param: iterables
     @return: list of dicts.
     """
+
+    # Initialize variables
     ls = list()
     dic = dict()
 
-    for name in randomize_names(file):
+    # Assign names as keys and [] as values in dic and append 
+    # dic to ls.
+    for name in randomize_names(names):
         dic[name] = []
         ls.append(dic)
-        dic = dict()
+        dic = dict() # Re-initialize dic.
 
     return ls
 
@@ -50,8 +54,8 @@ def main():
     instructors = 'instructors.txt'
 
     share_class(classes, instructors)
-    get_instructors(instructors)
-    # print(randomize_names(instructors))
+    print(get_instructors(instructors))
+    print(randomize_names(instructors))
 
 
 if __name__ == '__main__':
