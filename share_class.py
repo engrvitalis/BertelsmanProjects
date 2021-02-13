@@ -21,12 +21,13 @@ def get_departments(file):
     ls = list()
     d = dict()
 
+    # Open file, read line by line
     with open(file, 'r') as f:
         for line in f:
-            line = line.split()
-            d[line[0]] = line[1]
-            ls.append(d)
-            d = dict()
+            line = line.split() # Split line by space.
+            d[line[0]] = line[1]    # Add first element to d as key and second element as value
+            ls.append(d)    # Add d into ls.
+            d = dict()  #Re-initialize d for next round.
 
     return ls
 
