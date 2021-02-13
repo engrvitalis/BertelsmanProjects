@@ -17,7 +17,19 @@ def get_departments(file):
     @return: list of dicts.
     """
 
-    
+    # Initialize variables
+    ls = list()
+    d = dict()
+
+    with open(file, 'r') as f:
+        for line in f:
+            line = line.split()
+            d[line[0]] = line[1]
+            ls.append(d)
+            d = dict()
+
+    return ls
+
 
 def get_instructors(names):
     """
@@ -67,12 +79,13 @@ def randomize_names(file):
 
 
 def main():
-    classes = 'classes.txt'
+    departments = 'classes.txt'
     instructors = 'instructors.txt'
 
-    share_class(classes, instructors)
+    share_class(departments, instructors)
     print(get_instructors(instructors))
     print(randomize_names(instructors))
+    print(get_departments(departments))
 
 
 if __name__ == '__main__':
