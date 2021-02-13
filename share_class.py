@@ -1,45 +1,41 @@
 def share_class(classes, instructors):
-    class_dic = dict()
-    instructor_ls = list()
-    schedule = dict()
+    pass
 
-    with open(classes) as f:
+
+def get_instructors(file):
+    ls = list()
+    dic = dict()
+    s = set()
+
+    with open(file, 'r') as f:
         for line in f:
-            line = line.split()
-            class_dic[line[0]] = int(line[1])
+            line = line.strip()
+            s.add(line)
+        print(s)
+            # dic[line.strip()] = []
+            # # print(dic)
+            # ls.append(dic)
+            # dic = dict()
+
+
+def randomize_names(file):
+    s = set()
     
-    with open(instructors) as f:
+    with open(file, 'r') as f:
         for line in f:
-            instructor_ls.append(line.strip())
-    instructor_ls = set(instructor_ls)
+            line = line.strip()
+            s.add(line)
+        return s
 
-    items = class_dic.items()
-    items_value_sorted = sorted([(item[1], item[0]) for item in items])
-    items_sorted = [(item[1], item[0]) for item in items_value_sorted]
-    items_sorted = items_sorted[::-1]
+    print(ls)
 
-    for instructor in instructor_ls:
-        schedule[instructor] = []
-
-    i = 0
-    ind = 0
-
-    while i < len(items_sorted):
-        for name in schedule:
-            schedule[name].append(items_sorted[i])
-            i += 1
-            ind += 1
-
-
-    print(class_dic)
-    print(items_sorted)
-    print(schedule)
 
 def main():
     classes = 'classes.txt'
     instructors = 'instructors.txt'
 
     share_class(classes, instructors)
+    get_instructors(instructors)
 
 
 if __name__ == '__main__':
