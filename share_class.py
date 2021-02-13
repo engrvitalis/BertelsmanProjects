@@ -20,14 +20,11 @@ def get_instructors(file):
 
 def randomize_names(file):
     s = set()
-    
+
     with open(file, 'r') as f:
         for line in f:
-            line = line.strip()
-            s.add(line)
-        return s
-
-    print(ls)
+            s.add(line.strip())
+    return s
 
 
 def main():
@@ -35,7 +32,8 @@ def main():
     instructors = 'instructors.txt'
 
     share_class(classes, instructors)
-    get_instructors(instructors)
+    # get_instructors(instructors)
+    print(randomize_names(instructors))
 
 
 if __name__ == '__main__':
