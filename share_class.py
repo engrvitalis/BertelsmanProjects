@@ -2,8 +2,22 @@ def share_class(classes, instructors):
     pass
 
 
-def get_classes(file):
-    pass
+def get_departments(file):
+    """
+    This function will read file and extract the names of 
+    departments, the number of students in each department
+    and return it as a list of dicts with names as keys and 
+    the number of students as values.
+
+    eg:
+        get_departments('departments.txt')
+        --> returns [{'a': 45}, {'b': 87}, {'c': 23}]
+
+    @param: str - file
+    @return: list of dicts.
+    """
+
+    
 
 def get_instructors(names):
     """
