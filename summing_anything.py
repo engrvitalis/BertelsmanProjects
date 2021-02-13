@@ -21,9 +21,7 @@ def mySum(*items):
     return output
 
 # Test calls.
-print(mySum([1, 2, 3], [4, 5, 6, [2, 4]]))
-print(mySum([2,4,5], [3,5]))
-print(mySum(([2, 4], 2, (4, 5, 6))))
-print(mySum(1, 2, 3))
-print(mySum('1', 's', 't'))
-print(mySum())
+print(mySum([2,4,5], [3,5]))                # Expected Output: [2, 4, 5, 3, 5]
+print(mySum(1, 2, 3))                       # Expected Output: 6
+print(mySum('1', 's', 't'))                 # Expected Output: 1st
+print(mySum())                              # Expected Output: ()
