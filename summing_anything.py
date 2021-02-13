@@ -3,13 +3,14 @@ def mySum(*items):
     if not items:
         return items 
 
-    # Initialize output with the first 
+    # Initialize output with the first argument.
     output = items[0]
+    # Add or concatenate the remaining arguments to output and return it.
     for item in items[1:]:
         output += item
     return output
 
-
+# Test calls.
 print(mySum([1,2,3], [4,5,6,[2,4]]))
 print(mySum(1,2,3))
 print(mySum('1', 's', 't'))
