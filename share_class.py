@@ -27,9 +27,9 @@ def randomize_names(file):
     @return: set
     """
 
-    # 
     s = set()
 
+    # Go through file and add the content to s.
     with open(file, 'r') as f:
         for line in f:
             s.add(line.strip())
