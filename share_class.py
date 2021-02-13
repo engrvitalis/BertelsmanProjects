@@ -19,6 +19,15 @@ def get_instructors(file):
 
 
 def randomize_names(file):
+    """
+    This function reads file and add lines to 
+    set, s.
+
+    @param: str - file
+    @return: set
+    """
+
+    # 
     s = set()
 
     with open(file, 'r') as f:
