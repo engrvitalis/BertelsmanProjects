@@ -7,12 +7,16 @@ def alphabetize_names(obj):
     @param: list - obj
     @return: list - sorted list
     """
-    
+
     from operator import itemgetter
     
     
+    # Sort obj dicts with last and first name.
+    s = sorted(obj, key=itemgetter('last', 'first'))
+
     print()
-    for p in sorted(obj, key=itemgetter('last', 'first')):
+    # Print the sorted list contents.
+    for p in s:
         print(f'{p["last"]}, {p["first"]}: {p["email"]}')
     print()
 
@@ -21,4 +25,5 @@ PEOPLE = [{'first':'Reuven', 'last':'Lerner','email':'reuven@lerner.co.il'},
     {'first':'Vladimir', 'last':'Putin','email':'president@kremvax.ru'}
     ]
 
+# Sort PEOPLE in ascending order with first and last name.
 alphabetize_names(PEOPLE)
