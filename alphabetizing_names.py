@@ -1,7 +1,13 @@
 def alphabetize_names(obj):
     """
+    This function takes list of dictionaries containing 
+    lastname, firstname and email and returns same sorted in 
+    ascending order by lastname and firstname.
 
+    @param: list - obj
+    @return: list - sorted list
     """
+    
     from operator import itemgetter
     
     
