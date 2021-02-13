@@ -1,9 +1,10 @@
-def alphabetize_names(obj, key=(key1, key2)):
+def alphabetize_names(obj):
+    """
+
+    """
     from operator import itemgetter
     
     
-    # Multi sort obj with key1 and key2
-    s = sorted(obj, key=itemgetter(key1, key2)) 
     print()
     for p in sorted(obj, key=itemgetter('last', 'first')):
         print(f'{p["last"]}, {p["first"]}: {p["email"]}')
