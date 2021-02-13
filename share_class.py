@@ -2,9 +2,18 @@ def share_class(classes, instructors):
     pass
 
 
-def get_instructors(file):
+def get_instructors(names):
     """
-    
+    This function accepts an iterable, names as argument and creates 
+    a list of dictionaries with elements of names as keys and empty list
+    as values.
+
+    eg:
+        get_instructors({'a', 'b', 'c'})
+        --> return [{'a': [], 'b': [], 'c': []}]
+
+    @param: iterables
+    @return: list of dicts.
     """
     ls = list()
     dic = dict()
