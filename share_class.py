@@ -2,6 +2,9 @@ def share_class(classes, instructors):
     pass
 
 
+def get_classes(file):
+    pass
+
 def get_instructors(names):
     """
     This function accepts an iterable, names as argument and creates 
