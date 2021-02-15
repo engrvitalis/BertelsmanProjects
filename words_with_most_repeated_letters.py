@@ -1,18 +1,30 @@
 def most_repeating_letter_count(word):
+    """
+    This program will take a single word and  return 
+    the most frequent character therein.
+
+    @param: str - word
+    @return: 
+    """
     from collections import Counter
     
+    # Return the most common word count
     return Counter(word).most_common(1)[0][1]
 
 
 
 def most_repeating_word(words):
+    # Return the word with the most common character
     return max(words,key=most_repeating_letter_count)
 
 
 def main():
-    words = input("Enter words: ")
-    
-    print(most_repeating_word(words.split()))
+    while True:
+        words = input("Enter words or blank line to quit: ")
+        if not words:
+            break
+        # Display the word with the most common character
+        print(f'The word with most common character is: {most_repeating_word(words.split())}')
 
 
 main()
