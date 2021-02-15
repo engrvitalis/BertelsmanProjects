@@ -14,6 +14,15 @@ def most_repeating_letter_count(word):
 
 
 def most_repeating_word(words):
+    """
+    This function takes words as argument and return the 
+    word which contains the most frequent character other 
+    available words.
+
+    @param: str - words
+    @return: str
+    """
+    
     # Return the word with the most common character
     return max(words,key=most_repeating_letter_count)
 
