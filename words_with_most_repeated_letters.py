@@ -33,7 +33,7 @@ def main():
         if not words:
             break
         # Display the word with the most common character
-        print(f'The word with most common character is "{most_repeating_word(words.lower().split())}"')
+        print(f'\nThe word with most common character is "{most_repeating_word(words.lower().split())}".\n')
 
 
 main()
