@@ -22,7 +22,7 @@ def most_repeating_word(words):
     @param: str - words
     @return: str
     """
-    
+
     # Return the word with the most common character
     return max(words,key=most_repeating_letter_count)
 
@@ -33,7 +33,7 @@ def main():
         if not words:
             break
         # Display the word with the most common character
-        print(f'The word with most common character is: {most_repeating_word(words.split())}')
+        print(f'The word with most common character is "{most_repeating_word(words.lower().split())}"')
 
 
 main()
