@@ -1,4 +1,13 @@
 def  format_sort_records(data):
+    """
+    This function takes a list of tuples with three 
+    fields, first name, last name and duration as argument.
+    It will sort the list by last name and print a formatted 
+    output.
+
+    @param: list
+    @return: str
+    """
 
     import operator
 
@@ -23,24 +32,3 @@ def main():
 
 
 main()
-
-from operator import itemgetter
-
-PEOPLE = [
-    ('Vladimir', 'Putin', 3.626),
-    ('Joe', 'Biden', 7.85), 
-    ('Jinping', 'Xi', 10.603)]
-
-# Function to return a sorted list by arguments 
-# @param keys
-# @return sorted list by arguments 
-def format_sort_records(list_tuples, *args):
-    sort_list = []
-    new_list = sorted(list_tuples, key=itemgetter(*args))
-    for info in new_list:
-        sort_list.append('{1:10} {0:10} {2:5.2f}'.format(*info))
-    return sort_list
-
-
-# sort by last and first name
-print('\n'.join(format_sort_records(PEOPLE,1,0)))
