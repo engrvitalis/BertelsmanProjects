@@ -1,4 +1,11 @@
 def restaurant():
+    """
+    This function takes orders from customer and displays the 
+    running total.
+
+    @param: None
+    @return int - total
+    """
 
     # Initialize variables.
     menu = {'egusi': 150, 
@@ -31,8 +38,6 @@ def restaurant():
     print(f'Your total is {total}')
 
     return total
-
-
 
 
 def main():
