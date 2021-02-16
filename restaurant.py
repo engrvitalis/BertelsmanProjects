@@ -1,6 +1,6 @@
 def restaurant():
 
-
+    # Initialize variables.
     menu = {'egusi': 150, 
     'akpu': 150, 
     'onugbu': 200, 
@@ -14,11 +14,14 @@ def restaurant():
     total = 0
 
     print()
+    # Request input from user. Exit program if blank line is entered.
     while True:
         order = input("Order: ").strip().lower()
         if not order:
             break
         
+        # Check if customer order is available in the menu. Increment total
+        # if order is available and display appropriate message.
         if order in menu:
             total += menu[order]
             print(f'{order} cost {menu[order]}, total is {total}')
@@ -26,14 +29,17 @@ def restaurant():
             print(f'Sorry, we are fresh out of {order} today.')
 
     print(f'Your total is {total}')
+
     return total
 
 
 
 
 def main():
+    # Ask user for the order and display approriate message.
     restaurant()
+
     print()
 
-
+# Driver function.
 main()
