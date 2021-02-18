@@ -9,19 +9,23 @@ def get_rainfall():
     @return: dict
     """
 
+    # Initialize variable.
     rainfall = dict()
 
     while True:
+        # Request city name. Exit if blank line is entered.
         city = input("Enter city name: ")
         if not city:
             break
-
+        
+        # Make sure to process only numbers
         try:
             rain_qty = float(input("Enter rain quantity in mm: ").lower())
         except ValueError:
             print("Quantity of rain must be either int or float!")
             continue
 
+        # Update rainfall with city and rain_qty.
         if city in rainfall:
             rainfall[city] += rain_qty
         else:
