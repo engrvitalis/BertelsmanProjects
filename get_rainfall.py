@@ -30,5 +30,12 @@ def get_rainfall():
     return rainfall
 
 
+def main():
+    data = get_rainfall()
+    print(f'\nCity\t\tRain(mm)')
+    for key, value in data.items():
+        print(f'{key.capitalize()}\t\t{value}')
+    print()
 
-print(get_rainfall())
+
+main()
