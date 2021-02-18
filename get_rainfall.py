@@ -35,11 +35,12 @@ def get_rainfall():
 
 
 def main():
+    # Call get_rainfall, format and display returned value.
     data = get_rainfall()
-    print(f'\nCity\t\tRain(mm)')
+    print(f'\nCity\t\tRainfall(mm)')
     for key, value in data.items():
         print(f'{key.capitalize()}\t\t{value}')
     print()
 
-
+# Driver function.
 main()
