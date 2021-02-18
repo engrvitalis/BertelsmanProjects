@@ -37,6 +37,10 @@ def get_rainfall():
 def main():
     # Call get_rainfall, format and display returned value.
     data = get_rainfall()
+    # Don't print header if there is nothing to print.
+    if not data:
+        quit()
+
     print(f'\nCity\t\tRainfall(mm)')
     for key, value in data.items():
         print(f'{key.capitalize()}\t\t{value}')
