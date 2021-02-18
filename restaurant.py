@@ -18,7 +18,7 @@ def restaurant():
     'stew': 150, 
     'isiewu': 1000
     }
-    total = 0
+    total = 0.0
 
     print()
     # Request input from user. Exit program if blank line is entered.
@@ -35,14 +35,14 @@ def restaurant():
         else:
             print(f'Sorry, we are fresh out of {order} today.')
 
-    print(f'Your total is {total}')
+    # print(f'Your total is {total}')
 
     return total
 
 
 def main():
     # Ask user for the order and display approriate message.
-    restaurant()
+    print(f'Your total is {restaurant()}')
 
     print()
 
