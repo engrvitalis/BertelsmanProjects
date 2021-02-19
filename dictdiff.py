@@ -22,10 +22,12 @@ def dictdiff(first, second):
 
     return output
 
+# Test variables.
 d1 = {'a': 1, 'b': 2, 'c': 3}
 d2 = {'a': 1, 'b': 2, 'c': 4}
 d3 = {'a': 1, 'b': 2, 'd': 3}
 
+# Test calls.
 print(dictdiff(d1, d1))
 print(dictdiff(d1, d2))
 print(dictdiff(d1, d3))
