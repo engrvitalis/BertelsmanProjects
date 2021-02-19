@@ -8,13 +8,16 @@ def dictdiff(first, second):
     @return: dict
     """
 
+    # Initialize variable.
     output = dict()
-
+    # Remove key duplicates before interation.
     all_keys = first.keys() | second.keys()
 
-
     for key in all_keys:
+        # Check if key values in first and second are unequal.
         if first.get(key) != second.get(key):
+            # Add key value pair in output with value as a list
+            # containing key value in first and second dicts.
             output[key] = [first.get(key), second.get(key)]
 
     return output
