@@ -1,2 +1,8 @@
 def how_many_different_numbers(ls):
-    pass
+    """
+    This function takes a single list of integers 
+    and returns the number of different integers it contains.
+
+    @param: list - ls
+    @return: int
+    """
