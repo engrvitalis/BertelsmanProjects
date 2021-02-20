@@ -6,3 +6,6 @@ def how_many_different_numbers(ls):
     @param: list - ls
     @return: int
     """
+
+    # Remove duplicates, count unique and return total number.
+    
