@@ -1,5 +1,4 @@
 def get_final_line(file):
-    import sys
 
 
     """
@@ -22,6 +21,7 @@ def get_final_line(file):
     return last_line
 
 def main():
+    # This function is to be called from the command line.
     import sys
 
     try:
