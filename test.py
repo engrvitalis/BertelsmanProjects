@@ -1,30 +1,67 @@
-from random import randint
+import functools
 
-def guess_num():
-    ''' guess a random number between 0 and 100. while users guess is equal to the number provide clues'''
-    num = randint(0,100)
-    while True:
-        try:
-            # get the number and check
-            guess = int(input('enter your guess: '))
-            if num > guess:
-                print('too low')
-            elif num < guess:
-                print('too high')
-            else:
-                print('That is correct. You won')
-                break
-        except Exception as e:
-            print('Did you enter a valid number? The number must be between 0 and 100')
+
+def debug(func):
+    """Print the function signature and return value"""
+    @functools.wraps(func)
+    def wrapper_debug(*args, **kwargs):
+        args_repr = [repr(a) for a in args]
+        kwargs_repr = [f"{k}={v!r}" for k, v in kwargs.items()]
+        signature = ", ".join(args_repr + kwargs_repr)
+        print(f"Calling {func.__name__}({signature})")
+        value = func(*args, **kwargs)
+        print(f"{func.__name__!r} returned {value!r}")
+        return value
+    return wrapper_debug
+
+######################################################################
+
+from typing import List
+
+@debug
+def how_many_different_numbers(s: List[int]) -> int:
+    """ returns the number of unique elements in list s"""
+    return len(set(s))
+
+if __name__ == "__main__":
+    # testing
+    how_many_different_numbers([1, 2, 4, 1, 2, 4, 5])
+    print('\n')
+    how_many_different_numbers([1])
+    print('\n')
+    how_many_different_numbers([])
+    print('\n')
+    how_many_different_numbers([1, 1, 1, 1, 1, 1])
+
+
+
+# from random import randint
+
+# def guess_num():
+#     ''' guess a random number between 0 and 100. while users guess is equal to the number provide clues'''
+#     num = randint(0,100)
+#     while True:
+#         try:
+#             # get the number and check
+#             guess = int(input('enter your guess: '))
+#             if num > guess:
+#                 print('too low')
+#             elif num < guess:
+#                 print('too high')
+#             else:
+#                 print('That is correct. You won')
+#                 break
+#         except Exception as e:
+#             print('Did you enter a valid number? The number must be between 0 and 100')
     
 
 
-def main():
-    print("Guessing Game\nCan you guess my number?\nIt's between 0 and 100")
-    guess_num()
+# def main():
+#     print("Guessing Game\nCan you guess my number?\nIt's between 0 and 100")
+#     guess_num()
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
 
 
 # # Find and display the names of Python functions that are not immediately preceded by a
