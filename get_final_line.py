@@ -11,15 +11,24 @@ def get_final_line(file):
     """
 
     with open(file) as f:
+        # Initialize variable.
         last_line = None
 
+        # Go through the lines in file and assign each to last_line.
         for line in f:
             last_line = line
 
+    # Return the last encountered line.
     return last_line
 
-import sys
-file = sys.argv[1]
+def main():
+    import sys
 
-# Display the last line the file.
-print(get_final_line(file))
+    try:
+        file = sys.argv[1]
+        print(get_final_line(file))
+    except:
+        print("Provide a valid file name!")
+
+
+main()
