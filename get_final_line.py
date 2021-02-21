@@ -21,11 +21,11 @@ def get_final_line(file):
     return last_line
 
 def main():
-    # This function is to be called from the command line.
     import sys
 
     try:
         file = sys.argv[1]
+        # Call get_final_line with one command line argument, file.
         print(get_final_line(file))
     except:
         print("Provide a valid file name!")
