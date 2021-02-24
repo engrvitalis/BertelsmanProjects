@@ -9,3 +9,5 @@ def find_longest_word(file):
 def main():
     print(find_longest_word(file))
 
+if __name__ == '__main__':
+    main()
