@@ -4,3 +4,8 @@ def find_all_longest_words(files):
 
 def find_longest_word(file):
     pass
+
+
+def main():
+    print(find_longest_word(file))
+
